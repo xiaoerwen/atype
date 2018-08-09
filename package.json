@@ -1,0 +1,19 @@
+{
+  "name": "atype",
+  "version": "1.0.0",
+  "description": "小程序文档解析工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efe-blue/atype.git"
+  },
+  "author": "efe-blue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/efe-blue/atype/issues"
+  },
+  "homepage": "https://github.com/efe-blue/atype#readme"
+}
