@@ -14,9 +14,9 @@ program
 
 // 获取MD文件路径
 program
-	.command('getMD <src>')
-	.description('console markdown file path')
-    .action(require('./atype-getFile'))
+    .command('getMD <src>')
+    .description('console markdown file path')
+    .action(require('./atype-getFile'));
 
 
 // 参数处理
