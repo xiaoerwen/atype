@@ -2,6 +2,9 @@
   "name": "atype",
   "version": "1.0.0",
   "description": "小程序文档解析工具",
+  "bin": {
+    "atype": "bin/atype.js"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/efe-blue/atype/issues"
   },
-  "homepage": "https://github.com/efe-blue/atype#readme"
+  "homepage": "https://github.com/efe-blue/atype#readme",
+  "dependencies": {
+    "commander": "^2.17.1"
+  }
 }
