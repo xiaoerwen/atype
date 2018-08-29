@@ -7,7 +7,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "data": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,9 @@
   },
   "homepage": "https://github.com/efe-blue/atype#readme",
   "dependencies": {
-    "commander": "^2.17.1"
+    "cheerio": "^1.0.0-rc.2",
+    "commander": "^2.17.1",
+    "express": "^4.16.3",
+    "superagent": "^3.8.3"
   }
 }
