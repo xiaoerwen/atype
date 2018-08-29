@@ -1,0 +1,131 @@
+[
+  {
+    "title": "net",
+    "content": [
+      "swan.request",
+      "swan.uploadFile",
+      "swan.downloadFile",
+      "swan.connectSocket",
+      "swan.onSocketOpen",
+      "swan.onSocketError",
+      "swan.sendSocketMessage",
+      "swan.onSocketMessage",
+      "swan.closeSocket",
+      "swan.onSocketClose",
+      "swan.SocketTask"
+    ]
+  },
+  {
+    "title": "ai",
+    "content": []
+  },
+  {
+    "title": "media",
+    "content": [
+      "swan.chooseImage",
+      "swan.previewImage",
+      "swan.getImageInfo",
+      "swan.saveImageToPhotosAlbum",
+      "swan.getRecorderManager",
+      "swan.getBackgroundAudioManager",
+      "swan.createInnerAudioContext",
+      "swan.chooseVideo",
+      "swan.saveVideoToPhotosAlbum",
+      "swan.createVideoContext",
+      "swan.createLivePlayerContext",
+      "swan.createCameraContext"
+    ]
+  },
+  {
+    "title": "file",
+    "content": [
+      "swan.saveFile",
+      "swan.getFileInfo",
+      "swan.getSavedFileList",
+      "swan.getSavedFileInfo",
+      "swan.removeSavedFile",
+      "swan.openDocument"
+    ]
+  },
+  {
+    "title": "storage",
+    "content": [
+      "swan.setStorage",
+      "swan.setStorageSync",
+      "swan.getStorage",
+      "swan.getStorageSync",
+      "swan.getStorageInfo",
+      "swan.getStorageInfoSync",
+      "swan.removeStorage",
+      "swan.removeStorageSync",
+      "swan.clearStorage",
+      "swan.clearStorageSyn"
+    ]
+  },
+  {
+    "title": "location",
+    "content": [
+      "swan.getLocation",
+      "swan.chooseLocation",
+      "swan.openLocation",
+      "swan.createMapContext"
+    ]
+  },
+  {
+    "title": "show",
+    "content": []
+  },
+  {
+    "title": "device",
+    "content": [
+      "swan.getSystemInfo",
+      "swan.getSystemInfoSync",
+      "swan.canIUse",
+      "swan.onMemoryWarning",
+      "swan.getNetworkType",
+      "swan.onNetworkStatusChange",
+      "swan.onAccelerometerChange",
+      "swan.startAccelerometer",
+      "swan.stopAccelerometer",
+      "swan.onCompassChange",
+      "swan.startCompass",
+      "swan.stopCompass",
+      "swan.scanCode",
+      "swan.setScreenBrightness",
+      "swan.getScreenBrightness",
+      "swan.setKeepScreenOn",
+      "swan.onUserCaptureScreen",
+      "swan.vibrateLong",
+      "swan.vibrateShort",
+      "swan.addPhoneContact",
+      "swan.makePhoneCall",
+      "swan.setClipboardData",
+      "swan.getClipboardData"
+    ]
+  },
+  {
+    "title": "ext",
+    "content": [
+      "swan.getExtConfig",
+      "swan.getExtConfigSync"
+    ]
+  },
+  {
+    "title": "open",
+    "content": [
+      "swan.login",
+      "swan.checkSession",
+      "swan.authorize",
+      "swan.getSwanId",
+      "swan.getUserInfo",
+      "swan.openSetting",
+      "swan.getSetting",
+      "swan.onShareAppMessage",
+      "swan.chooseAddress",
+      "swan.requestPolymerPayment 百度电商开放平台：产品介绍",
+      "swan.chooseInvoiceTitle",
+      "swan.navigateToSmartProgram",
+      "swan.navigateBackSmartProgram"
+    ]
+  }
+]

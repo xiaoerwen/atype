@@ -1,1 +1,374 @@
-[{"title":"/docs/develop/api/net/","content":[{"title":"request","href":"https://smartprogram.baidu.com/docs/develop/api/net_request/#request"},{"title":"uploadFile","href":"https://smartprogram.baidu.com/docs/develop/api/net_uploadFile/#uploadFile"},{"title":"downloadFile","href":"https://smartprogram.baidu.com/docs/develop/api/net_uploadFile/#downloadFile"},{"title":"connectSocket","href":"https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#connectSocket"},{"title":"onSocketOpen","href":"https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#onSocketOpen"},{"title":"onSocketError","href":"https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#onSocketError"},{"title":"sendSocketMessage","href":"https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#sendSocketMessage"},{"title":"onSocketMessage","href":"https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#onSocketMessage"},{"title":"closeSocket","href":"https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#clouseSocketMessage"},{"title":"onSocketClose","href":"https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#onSocketClose"},{"title":"SocketTask","href":"https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#SocketTask"}]},{"title":"/docs/develop/api/ai/","content":[{"title":"ocrIdCard","href":"https://smartprogram.baidu.com/docs/develop/api/ai_ocr/#ocrIdCard"},{"title":"ocrBankCard","href":"https://smartprogram.baidu.com/docs/develop/api/ai_ocr/#ocrBankCard"},{"title":"ocrDrivingLicense","href":"https://smartprogram.baidu.com/docs/develop/api/ai_ocr/#ocrDrivingLicense"},{"title":"ocrVehicleLicense","href":"https://smartprogram.baidu.com/docs/develop/api/ai_ocr/#ocrVehicleLicense"},{"title":"textReview","href":"https://smartprogram.baidu.com/docs/develop/api/ai_text/#textReview"},{"title":"textToAudio","href":"https://smartprogram.baidu.com/docs/develop/api/ai_audio/#textToAudio"},{"title":"imageAudit","href":"https://smartprogram.baidu.com/docs/develop/api/ai_audit/#imageAudit"},{"title":"advancedGeneralIdentify","href":"https://smartprogram.baidu.com/docs/develop/api/ai_classify/#advancedGeneralIdentify"},{"title":"objectDetectIdentify","href":"https://smartprogram.baidu.com/docs/develop/api/ai_classify/#objectDetectIdentify"},{"title":"carClassify","href":"https://smartprogram.baidu.com/docs/develop/api/ai_classify/#carClassify"},{"title":"dishClassify","href":"https://smartprogram.baidu.com/docs/develop/api/ai_classify/#dishClassify"},{"title":"logoClassify","href":"https://smartprogram.baidu.com/docs/develop/api/ai_classify/#logoClassify"},{"title":"animalClassify","href":"https://smartprogram.baidu.com/docs/develop/api/ai_classify/#animalClassify"},{"title":"plantClassify","href":"https://smartprogram.baidu.com/docs/develop/api/ai_classify/#plantClassify"}]},{"title":"/docs/develop/api/media/","content":[{"title":"chooseImage","href":"https://smartprogram.baidu.com/docs/develop/api/media_image/#previewImage"},{"title":"previewImage","href":"https://smartprogram.baidu.com/docs/develop/api/media_image/#previewImage"},{"title":"getImageInfo","href":"https://smartprogram.baidu.com/docs/develop/api/media_image/#getImageInfo"},{"title":"saveImageToPhotosAlbum","href":"https://smartprogram.baidu.com/docs/develop/api/media_image/#saveImageToPhotosAlbum"},{"title":"getRecorderManager","href":"https://smartprogram.baidu.com/docs/develop/api/media_recorder/#getRecorderManager"},{"title":"getBackgroundAudioManager","href":"https://smartprogram.baidu.com/docs/develop/api/media_backgroundAudioManager/#getBackgroundAudioManager"},{"title":"createInnerAudioContext","href":"https://smartprogram.baidu.com/docs/develop/api/media_createInnerAudioContext/#createInnerAudioContext"},{"title":"chooseVideo","href":"https://smartprogram.baidu.com/docs/develop/api/media_video/#chooseVideo"},{"title":"saveVideoToPhotosAlbum","href":"https://smartprogram.baidu.com/docs/develop/api/media_video/#saveVideoToPhotosAlbum"},{"title":"createVideoContext","href":"https://smartprogram.baidu.com/docs/develop/api/media_videoContext/#createVideoContext"},{"title":"createLivePlayerContext","href":"https://smartprogram.baidu.com/docs/develop/api/media_livePlayerContext/#createLivePlayerContext"},{"title":"createCameraContext","href":"https://smartprogram.baidu.com/docs/develop/api/media_cameraContext/#createCameraContext"}]},{"title":"/docs/develop/api/file/","content":[{"title":"saveFile","href":"https://smartprogram.baidu.com/docs/develop/api/file_save/#saveFile"},{"title":"getFileInfo","href":"https://smartprogram.baidu.com/docs/develop/api/file_save/#getFileInfo"},{"title":"getSavedFileList","href":"https://smartprogram.baidu.com/docs/develop/api/file_save/#getSavedFileList"},{"title":"getSavedFileInfo","href":"https://smartprogram.baidu.com/docs/develop/api/file_save/#getSavedFileInfo"},{"title":"removeSavedFile","href":"https://smartprogram.baidu.com/docs/develop/api/file_remove/#removeSavedFile"},{"title":"openDocument","href":"https://smartprogram.baidu.com/docs/develop/api/file_open/#openDocument"}]},{"title":"/docs/develop/api/storage/","content":[{"title":"setStorage","href":"https://smartprogram.baidu.com/docs/develop/api/storage_save/#setStorage"},{"title":"setStorageSync","href":"https://smartprogram.baidu.com/docs/develop/api/storage_save/#setStorageSync"},{"title":"getStorage","href":"https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorage"},{"title":"getStorageSync","href":"https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorageSync"},{"title":"getStorageInfo","href":"https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorageInfo"},{"title":"getStorageInfoSync","href":"https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorageInfoSync"},{"title":"removeStorage","href":"https://smartprogram.baidu.com/docs/develop/api/storage_remove/#removeStorage"},{"title":"removeStorageSync","href":"https://smartprogram.baidu.com/docs/develop/api/storage_remove/#removeStorageSync"},{"title":"clearStorage","href":"https://smartprogram.baidu.com/docs/develop/api/storage_remove/#clearStorage"},{"title":"clearStorageSyn","href":"https://smartprogram.baidu.com/docs/develop/api/storage_remove/#clearStorageSync"}]},{"title":"/docs/develop/api/location/","content":[{"title":"getLocation","href":"https://smartprogram.baidu.com/docs/develop/api/location_get/#getLocation"},{"title":"chooseLocation","href":"https://smartprogram.baidu.com/docs/develop/api/location_get/#chooseLocation"},{"title":"openLocation","href":"https://smartprogram.baidu.com/docs/develop/api/location_open/#openLocation"},{"title":"createMapContext","href":"https://smartprogram.baidu.com/docs/develop/api/location_map/#createMapContext"}]},{"title":"/docs/develop/api/show/","content":[{"title":"createCanvasContext","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#createCanvasContext"},{"title":"canvasToTempFilePath(OBJECT, this)","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasToTempFilePath-OBJECT-this"},{"title":"canvasContext.setFillStyle","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setFillStyle"},{"title":"canvasContext.setStrokeStyle","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setStrokeStyle"},{"title":"canvasContext.setShadow","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setShadow"},{"title":"canvasContext.createLinearGradient","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-createLinearGradient"},{"title":"canvasContext.createCircularGradient","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-createCircularGradient"},{"title":"canvasContext.addColorStop","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-addColorStop"},{"title":"canvasContext.setLineWidth","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setLineWidth"},{"title":"canvasContext.setLineCap","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setLineCap"},{"title":"canvasContext.setLineJoin","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setLineJoin"},{"title":"canvasContext.setLineDash","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setLineDash"},{"title":"canvasContext.setMiterLimit","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setMiterLimit"},{"title":"canvasContext.rec","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-rect"},{"title":"canvasContext.fillRect","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-fillRect"},{"title":"canvasContext.strokeRect","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-strokeRect"},{"title":"canvasContext.clearRect","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-clearRect"},{"title":"canvasContext.fill","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-fill"},{"title":"canvasContext.stroke","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-stroke"},{"title":"canvasContext.beginPath","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-beginPath"},{"title":"canvasContext.closePath","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-closePath"},{"title":"ccanvasContext.moveTo","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-moveTo"},{"title":"canvasContext.lineTo","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-lineTo"},{"title":"canvasContext.arc","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-arc"},{"title":"canvasContext.scale","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-scale"},{"title":"canvasContext.rotate","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-rotate"},{"title":"canvasContext.translate","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-translate"},{"title":"canvasContext.clip","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-clip"},{"title":"canvasContext.setFontSizet","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setFontSize"},{"title":"canvasContext.fillText","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-fillText"},{"title":"canvasContext.setTextAlign","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setTextAlign"},{"title":"canvasContext.setTextBaseline","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setTextBaseline"},{"title":"canvasContext.drawImage”>showToast","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-drawImage"},{"title":"canvasContext.setGlobalAlph","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setGlobalAlpha"},{"title":"canvasContext.measureText","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-measureText"},{"title":"canvasContext.arcTo","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-arcTo"},{"title":"canvasContext.strokeTextt","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-strokeText"},{"title":"canvasContext.setLineDashOffset","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setLineDashOffset"},{"title":"canvasContext.createPattern","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-createPattern"},{"title":"canvasContext.bezierCurveTo","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-bezierCurveTo"},{"title":"canvasContext.quadraticCurveTo","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-quadraticCurveTo"},{"title":"canvasContext.savet","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-save"},{"title":"canvasContext.restore","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-restore"},{"title":"canvasContext.draw","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-draw"},{"title":"canvasContext.font","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-font"},{"title":"canvasContext.setTransform","href":"https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setTransform"},{"title":"showToast","href":"https://smartprogram.baidu.com/docs/develop/api/show_toast/#showToast"},{"title":"showLoading","href":"https://smartprogram.baidu.com/docs/develop/api/show_toast/#showLoading"},{"title":"hideLoading","href":"https://smartprogram.baidu.com/docs/develop/api/show_toast/#hideToast"},{"title":"showModal","href":"https://smartprogram.baidu.com/docs/develop/api/show_toast/#showModal"},{"title":"showActionSheet","href":"https://smartprogram.baidu.com/docs/develop/api/show_toast/#showActionSheet"},{"title":"setNavigationBarTitle","href":"https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#setNavigationBarTitle"},{"title":"showNavigationBarLoading","href":"https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#showNavigationBarLoading"},{"title":"hideNavigationBarLoading","href":"https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#hideNavigationBarLoading"},{"title":"setNavigationBarColor","href":"https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#setNavigationBarColor"},{"title":"setTabBarBadge","href":"https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#setTabBarBadge"},{"title":"removeTabBarBadge","href":"https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#removeTabBarBadge"},{"title":"showTabBarRedDot","href":"https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#showTabBarRedDot"},{"title":"hideTabBarRedDot","href":"https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#hideTabBarRedDot"},{"title":"setTabBarStyle","href":"https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#setTabBarStyle"},{"title":"setTabBarItem","href":"https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#setTabBarItem"},{"title":"showTabBar","href":"https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#showTabBar"},{"title":"hideTabBar","href":"https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#hideTabBar"},{"title":"navigateTo","href":"https://smartprogram.baidu.com/docs/develop/api/show_tab/#navigateTo"},{"title":"redirectTo","href":"https://smartprogram.baidu.com/docs/develop/api/show_tab/#redirectTo"},{"title":"switchTab","href":"https://smartprogram.baidu.com/docs/develop/api/show_tab/#switchTab"},{"title":"navigateBack","href":"https://smartprogram.baidu.com/docs/develop/api/show_tab/#navigateBack"},{"title":"reLaunch","href":"https://smartprogram.baidu.com/docs/develop/api/show_tab/#reLaunch"},{"title":"createAnimation","href":"https://smartprogram.baidu.com/docs/develop/api/show_createAnimation/#createAnimation"},{"title":"pageScrollTo","href":"https://smartprogram.baidu.com/docs/develop/api/show_pageScrollTo/#pageScrollTo"},{"title":"onPullDownRefresh","href":"https://smartprogram.baidu.com/docs/develop/api/show_pull/#onPullDownRefresh"},{"title":"startPullDownRefresh","href":"https://smartprogram.baidu.com/docs/develop/api/show_pull/#startPullDownRefresh"},{"title":"stopPullDownRefresh","href":"https://smartprogram.baidu.com/docs/develop/api/show_pull/#stopPullDownRefresh"},{"title":"createSelectorQuery","href":"https://smartprogram.baidu.com/docs/develop/api/show_query/#createSelectorQuery"},{"title":"selectorQuery.in(component)","href":"https://smartprogram.baidu.com/docs/develop/api/show_query/#selectorQuery-in-component"},{"title":"selectorQuery.select(selector)","href":"https://smartprogram.baidu.com/docs/develop/api/show_query/#selectorQuery-select-selector"},{"title":"selectorQuery.selectAll(selector)","href":"https://smartprogram.baidu.com/docs/develop/api/show_query/#selectorQuery-selectAll-selector"},{"title":"selectorQuery.selectViewport()","href":"https://smartprogram.baidu.com/docs/develop/api/show_query/#selectorQuery-selectViewport"},{"title":"nodesRef.boundingClientRect([callback])","href":"https://smartprogram.baidu.com/docs/develop/api/show_query/#nodesRef-boundingClientRect-callback"},{"title":"nodesRef.scrollOffset([callback])","href":"https://smartprogram.baidu.com/docs/develop/api/show_query/#nodesRef-scrollOffset-callback"},{"title":"nodesRef.fields(fields,[callback])","href":"https://smartprogram.baidu.com/docs/develop/api/show_query/#nodesRef-fields-fields-callback"},{"title":"selectorQuery.exec([callback])","href":"https://smartprogram.baidu.com/docs/develop/api/show_query/#selectorQuery-exec-callback"}]},{"title":"/docs/develop/api/device/","content":[{"title":"getSystemInfo","href":"https://smartprogram.baidu.com/docs/develop/api/device_sys/#getSystemInfo"},{"title":"getSystemInfoSync","href":"https://smartprogram.baidu.com/docs/develop/api/device_sys/#getSystemInfoSync"},{"title":"canIUse","href":"https://smartprogram.baidu.com/docs/develop/api/device_sys/#canIUse"},{"title":"onMemoryWarning","href":"https://smartprogram.baidu.com/docs/develop/api/device_onmemory/#onMemoryWarning"},{"title":"getNetworkType","href":"https://smartprogram.baidu.com/docs/develop/api/device_network/#getNetworkType"},{"title":"onNetworkStatusChange","href":"https://smartprogram.baidu.com/docs/develop/api/device_network/#onNetworkStatusChange"},{"title":"onAccelerometerChange","href":"https://smartprogram.baidu.com/docs/develop/api/device_accelerometer/#onAccelerometerChange"},{"title":"startAccelerometer","href":"https://smartprogram.baidu.com/docs/develop/api/device_accelerometer/#startAccelerometer"},{"title":"stopAccelerometer","href":"https://smartprogram.baidu.com/docs/develop/api/device_accelerometer/#stopAccelerometer"},{"title":"onCompassChange","href":"https://smartprogram.baidu.com/docs/develop/api/device_compass/#onCompassChange"},{"title":"startCompass","href":"https://smartprogram.baidu.com/docs/develop/api/device_compass/#startCompass"},{"title":"stopCompass","href":"https://smartprogram.baidu.com/docs/develop/api/device_compass/#stopCompass"},{"title":"scanCode","href":"https://smartprogram.baidu.com/docs/develop/api/device_scan/#scanCode"},{"title":"setScreenBrightness","href":"https://smartprogram.baidu.com/docs/develop/api/device_screen/#setScreenBrightness"},{"title":"getScreenBrightness","href":"https://smartprogram.baidu.com/docs/develop/api/device_screen/#getScreenBrightness"},{"title":"setKeepScreenOn","href":"https://smartprogram.baidu.com/docs/develop/api/device_screen/#setKeepScreenOn"},{"title":"onUserCaptureScreen","href":"https://smartprogram.baidu.com/docs/develop/api/device_capture/#onUserCaptureScreen"},{"title":"vibrateLong","href":"https://smartprogram.baidu.com/docs/develop/api/device_vibrate/#vibrateLong"},{"title":"vibrateShort","href":"https://smartprogram.baidu.com/docs/develop/api/device_vibrate/#vibrateShort"},{"title":"addPhoneContact","href":"https://smartprogram.baidu.com/docs/develop/api/device_call/#addPhoneContact"},{"title":"makePhoneCall","href":"https://smartprogram.baidu.com/docs/develop/api/device_call/#makePhoneCall"},{"title":"setClipboardData","href":"https://smartprogram.baidu.com/docs/develop/api/device_clipboard/#setClipboardData"},{"title":"getClipboardData","href":"https://smartprogram.baidu.com/docs/develop/api/device_clipboard/#getClipboardData"}]},{"title":"/docs/develop/api/ext/","content":[{"title":"getExtConfig","href":"https://smartprogram.baidu.com/docs/develop/api/getExtConfig/#getExtConfig"},{"title":"getExtConfigSync","href":"https://smartprogram.baidu.com/docs/develop/api/getExtConfig/#getExtConfigSync"}]},{"title":"/docs/develop/api/open/","content":[{"title":"login","href":"https://smartprogram.baidu.com/docs/develop/api/open_login/#login"},{"title":"checkSession","href":"https://smartprogram.baidu.com/docs/develop/api/open_login/#checkSession"},{"title":"authorize","href":"https://smartprogram.baidu.com/docs/develop/api/open_authorize/#authorize"},{"title":"getSwanId","href":"https://smartprogram.baidu.com/docs/develop/api/open_userInfo/#getSwanId"},{"title":"getUserInfo","href":"https://smartprogram.baidu.com/docs/develop/api/open_userInfo/#getUserInfo"},{"title":"openSetting","href":"https://smartprogram.baidu.com/docs/develop/api/open_userInfo/#openSetting"},{"title":"getSetting","href":"https://smartprogram.baidu.com/docs/develop/api/open_setting/#getSetting"},{"title":"onShareAppMessage","href":"https://smartprogram.baidu.com/docs/develop/api/open_share/#onShareAppMessage"},{"title":"chooseAddress","href":"https://smartprogram.baidu.com/docs/develop/api/open_chooseAddress/#chooseAddress"},{"title":"requestPolymerPayment 百度电商开放平台：产品介绍","href":"https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment"},{"title":"chooseInvoiceTitle","href":"https://smartprogram.baidu.com/docs/develop/api/open_chooseInvoiceTitle/#chooseInvoiceTitle"},{"title":"navigateToSmartProgram","href":"https://smartprogram.baidu.com/docs/develop/api/open_smartProgram/#navigateToSmartProgram"},{"title":"navigateBackSmartProgram","href":"https://smartprogram.baidu.com/docs/develop/api/open_smartProgram/#navigateBackSmartProgram"}]}]
+[
+  {
+    "title": "/docs/develop/api/net/",
+    "content": [
+      {
+        "title": "request",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_request/#request"
+      },
+      {
+        "title": "uploadFile",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_uploadFile/#uploadFile"
+      },
+      {
+        "title": "downloadFile",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_uploadFile/#downloadFile"
+      },
+      {
+        "title": "connectSocket",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#connectSocket"
+      },
+      {
+        "title": "onSocketOpen",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#onSocketOpen"
+      },
+      {
+        "title": "onSocketError",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#onSocketError"
+      },
+      {
+        "title": "sendSocketMessage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#sendSocketMessage"
+      },
+      {
+        "title": "onSocketMessage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#onSocketMessage"
+      },
+      {
+        "title": "closeSocket",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#clouseSocketMessage"
+      },
+      {
+        "title": "onSocketClose",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#onSocketClose"
+      },
+      {
+        "title": "SocketTask",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#SocketTask"
+      }
+    ]
+  },
+  {
+    "title": "/docs/develop/api/ai/",
+    "content": []
+  },
+  {
+    "title": "/docs/develop/api/media/",
+    "content": [
+      {
+        "title": "chooseImage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_image/#previewImage"
+      },
+      {
+        "title": "previewImage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_image/#previewImage"
+      },
+      {
+        "title": "getImageInfo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_image/#getImageInfo"
+      },
+      {
+        "title": "saveImageToPhotosAlbum",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_image/#saveImageToPhotosAlbum"
+      },
+      {
+        "title": "getRecorderManager",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_recorder/#getRecorderManager"
+      },
+      {
+        "title": "getBackgroundAudioManager",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_backgroundAudioManager/#getBackgroundAudioManager"
+      },
+      {
+        "title": "createInnerAudioContext",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_createInnerAudioContext/#createInnerAudioContext"
+      },
+      {
+        "title": "chooseVideo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_video/#chooseVideo"
+      },
+      {
+        "title": "saveVideoToPhotosAlbum",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_video/#saveVideoToPhotosAlbum"
+      },
+      {
+        "title": "createVideoContext",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_videoContext/#createVideoContext"
+      },
+      {
+        "title": "createLivePlayerContext",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_livePlayerContext/#createLivePlayerContext"
+      },
+      {
+        "title": "createCameraContext",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_cameraContext/#createCameraContext"
+      }
+    ]
+  },
+  {
+    "title": "/docs/develop/api/file/",
+    "content": [
+      {
+        "title": "saveFile",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/file_save/#saveFile"
+      },
+      {
+        "title": "getFileInfo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/file_save/#getFileInfo"
+      },
+      {
+        "title": "getSavedFileList",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/file_save/#getSavedFileList"
+      },
+      {
+        "title": "getSavedFileInfo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/file_save/#getSavedFileInfo"
+      },
+      {
+        "title": "removeSavedFile",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/file_remove/#removeSavedFile"
+      },
+      {
+        "title": "openDocument",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/file_open/#openDocument"
+      }
+    ]
+  },
+  {
+    "title": "/docs/develop/api/storage/",
+    "content": [
+      {
+        "title": "setStorage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#setStorage"
+      },
+      {
+        "title": "setStorageSync",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#setStorageSync"
+      },
+      {
+        "title": "getStorage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorage"
+      },
+      {
+        "title": "getStorageSync",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorageSync"
+      },
+      {
+        "title": "getStorageInfo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorageInfo"
+      },
+      {
+        "title": "getStorageInfoSync",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorageInfoSync"
+      },
+      {
+        "title": "removeStorage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_remove/#removeStorage"
+      },
+      {
+        "title": "removeStorageSync",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_remove/#removeStorageSync"
+      },
+      {
+        "title": "clearStorage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_remove/#clearStorage"
+      },
+      {
+        "title": "clearStorageSyn",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_remove/#clearStorageSync"
+      }
+    ]
+  },
+  {
+    "title": "/docs/develop/api/location/",
+    "content": [
+      {
+        "title": "getLocation",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/location_get/#getLocation"
+      },
+      {
+        "title": "chooseLocation",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/location_get/#chooseLocation"
+      },
+      {
+        "title": "openLocation",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/location_open/#openLocation"
+      },
+      {
+        "title": "createMapContext",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/location_map/#createMapContext"
+      }
+    ]
+  },
+  {
+    "title": "/docs/develop/api/show/",
+    "content": []
+  },
+  {
+    "title": "/docs/develop/api/device/",
+    "content": [
+      {
+        "title": "getSystemInfo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_sys/#getSystemInfo"
+      },
+      {
+        "title": "getSystemInfoSync",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_sys/#getSystemInfoSync"
+      },
+      {
+        "title": "canIUse",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_sys/#canIUse"
+      },
+      {
+        "title": "onMemoryWarning",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_onmemory/#onMemoryWarning"
+      },
+      {
+        "title": "getNetworkType",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_network/#getNetworkType"
+      },
+      {
+        "title": "onNetworkStatusChange",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_network/#onNetworkStatusChange"
+      },
+      {
+        "title": "onAccelerometerChange",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_accelerometer/#onAccelerometerChange"
+      },
+      {
+        "title": "startAccelerometer",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_accelerometer/#startAccelerometer"
+      },
+      {
+        "title": "stopAccelerometer",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_accelerometer/#stopAccelerometer"
+      },
+      {
+        "title": "onCompassChange",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_compass/#onCompassChange"
+      },
+      {
+        "title": "startCompass",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_compass/#startCompass"
+      },
+      {
+        "title": "stopCompass",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_compass/#stopCompass"
+      },
+      {
+        "title": "scanCode",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_scan/#scanCode"
+      },
+      {
+        "title": "setScreenBrightness",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_screen/#setScreenBrightness"
+      },
+      {
+        "title": "getScreenBrightness",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_screen/#getScreenBrightness"
+      },
+      {
+        "title": "setKeepScreenOn",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_screen/#setKeepScreenOn"
+      },
+      {
+        "title": "onUserCaptureScreen",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_capture/#onUserCaptureScreen"
+      },
+      {
+        "title": "vibrateLong",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_vibrate/#vibrateLong"
+      },
+      {
+        "title": "vibrateShort",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_vibrate/#vibrateShort"
+      },
+      {
+        "title": "addPhoneContact",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_call/#addPhoneContact"
+      },
+      {
+        "title": "makePhoneCall",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_call/#makePhoneCall"
+      },
+      {
+        "title": "setClipboardData",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_clipboard/#setClipboardData"
+      },
+      {
+        "title": "getClipboardData",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_clipboard/#getClipboardData"
+      }
+    ]
+  },
+  {
+    "title": "/docs/develop/api/ext/",
+    "content": [
+      {
+        "title": "getExtConfig",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/getExtConfig/#getExtConfig"
+      },
+      {
+        "title": "getExtConfigSync",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/getExtConfig/#getExtConfigSync"
+      }
+    ]
+  },
+  {
+    "title": "/docs/develop/api/open/",
+    "content": [
+      {
+        "title": "login",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_login/#login"
+      },
+      {
+        "title": "checkSession",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_login/#checkSession"
+      },
+      {
+        "title": "authorize",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_authorize/#authorize"
+      },
+      {
+        "title": "getSwanId",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_userInfo/#getSwanId"
+      },
+      {
+        "title": "getUserInfo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_userInfo/#getUserInfo"
+      },
+      {
+        "title": "openSetting",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_userInfo/#openSetting"
+      },
+      {
+        "title": "getSetting",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_setting/#getSetting"
+      },
+      {
+        "title": "onShareAppMessage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_share/#onShareAppMessage"
+      },
+      {
+        "title": "chooseAddress",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_chooseAddress/#chooseAddress"
+      },
+      {
+        "title": "requestPolymerPayment 百度电商开放平台：产品介绍",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment"
+      },
+      {
+        "title": "chooseInvoiceTitle",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_chooseInvoiceTitle/#chooseInvoiceTitle"
+      },
+      {
+        "title": "navigateToSmartProgram",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_smartProgram/#navigateToSmartProgram"
+      },
+      {
+        "title": "navigateBackSmartProgram",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_smartProgram/#navigateBackSmartProgram"
+      }
+    ]
+  }
+]
