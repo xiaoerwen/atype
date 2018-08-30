@@ -22,9 +22,7 @@
         "title": "downloadFile",
         "href": "https://smartprogram.baidu.com/docs/develop/api/net_uploadFile/#downloadFile",
         "param": [
-          "url",
-          "filePath",
-          "name"
+          "url"
         ]
       },
       {
@@ -37,50 +35,40 @@
       {
         "title": "onSocketOpen",
         "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#onSocketOpen",
-        "param": [
-          "url"
-        ]
+        "param": []
       },
       {
         "title": "onSocketError",
         "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#onSocketError",
-        "param": [
-          "url"
-        ]
+        "param": []
       },
       {
         "title": "sendSocketMessage",
         "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#sendSocketMessage",
         "param": [
-          "url"
+          "data"
         ]
       },
       {
         "title": "onSocketMessage",
         "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#onSocketMessage",
-        "param": [
-          "url"
-        ]
+        "param": []
       },
       {
         "title": "closeSocket",
         "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#clouseSocketMessage",
-        "param": [
-          "url"
-        ]
+        "param": []
       },
       {
         "title": "onSocketClose",
         "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#onSocketClose",
-        "param": [
-          "url"
-        ]
+        "param": []
       },
       {
         "title": "SocketTask",
         "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#SocketTask",
         "param": [
-          "url"
+          "data"
         ]
       }
     ]
@@ -164,7 +152,8 @@
         "title": "dishClassify",
         "href": "https://smartprogram.baidu.com/docs/develop/api/ai_classify/#dishClassify",
         "param": [
-          "image"
+          "image",
+          "filter_threshold"
         ]
       },
       {
@@ -184,9 +173,7 @@
       {
         "title": "plantClassify",
         "href": "https://smartprogram.baidu.com/docs/develop/api/ai_classify/#plantClassify",
-        "param": [
-          "image"
-        ]
+        "param": []
       }
     ]
   },
@@ -203,19 +190,23 @@
       {
         "title": "previewImage",
         "href": "https://smartprogram.baidu.com/docs/develop/api/media_image/#previewImage",
-        "param": []
+        "param": [
+          "urls"
+        ]
       },
       {
         "title": "getImageInfo",
         "href": "https://smartprogram.baidu.com/docs/develop/api/media_image/#getImageInfo",
         "param": [
-          "success"
+          "src"
         ]
       },
       {
         "title": "saveImageToPhotosAlbum",
         "href": "https://smartprogram.baidu.com/docs/develop/api/media_image/#saveImageToPhotosAlbum",
-        "param": []
+        "param": [
+          "filePath"
+        ]
       },
       {
         "title": "getRecorderManager",
@@ -243,7 +234,7 @@
         "title": "saveVideoToPhotosAlbum",
         "href": "https://smartprogram.baidu.com/docs/develop/api/media_video/#saveVideoToPhotosAlbum",
         "param": [
-          "success"
+          "filePath"
         ]
       },
       {
@@ -277,21 +268,19 @@
         "title": "getFileInfo",
         "href": "https://smartprogram.baidu.com/docs/develop/api/file_save/#getFileInfo",
         "param": [
-          "tempFilePath"
+          "filePath"
         ]
       },
       {
         "title": "getSavedFileList",
         "href": "https://smartprogram.baidu.com/docs/develop/api/file_save/#getSavedFileList",
-        "param": [
-          "tempFilePath"
-        ]
+        "param": []
       },
       {
         "title": "getSavedFileInfo",
         "href": "https://smartprogram.baidu.com/docs/develop/api/file_save/#getSavedFileInfo",
         "param": [
-          "tempFilePath"
+          "filePath"
         ]
       },
       {
@@ -334,32 +323,27 @@
         "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorage",
         "param": [
           "key",
-          "data"
+          "success"
         ]
       },
       {
         "title": "getStorageSync",
         "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorageSync",
         "param": [
-          "key",
-          "data"
+          "key"
         ]
       },
       {
         "title": "getStorageInfo",
         "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorageInfo",
         "param": [
-          "key",
-          "data"
+          "success"
         ]
       },
       {
         "title": "getStorageInfoSync",
         "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorageInfoSync",
-        "param": [
-          "key",
-          "data"
-        ]
+        "param": []
       },
       {
         "title": "removeStorage",
@@ -373,25 +357,20 @@
         "title": "removeStorageSync",
         "href": "https://smartprogram.baidu.com/docs/develop/api/storage_remove/#removeStorageSync",
         "param": [
-          "key",
-          "success"
+          "key"
         ]
       },
       {
         "title": "clearStorage",
         "href": "https://smartprogram.baidu.com/docs/develop/api/storage_remove/#clearStorage",
         "param": [
-          "key",
           "success"
         ]
       },
       {
         "title": "clearStorageSyn",
         "href": "https://smartprogram.baidu.com/docs/develop/api/storage_remove/#clearStorageSync",
-        "param": [
-          "key",
-          "success"
-        ]
+        "param": []
       }
     ]
   },
@@ -408,9 +387,7 @@
       {
         "title": "chooseLocation",
         "href": "https://smartprogram.baidu.com/docs/develop/api/location_get/#chooseLocation",
-        "param": [
-          "success"
-        ]
+        "param": []
       },
       {
         "title": "openLocation",
@@ -855,16 +832,12 @@
       {
         "title": "getSystemInfoSync",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_sys/#getSystemInfoSync",
-        "param": [
-          "success"
-        ]
+        "param": []
       },
       {
         "title": "canIUse",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_sys/#canIUse",
-        "param": [
-          "success"
-        ]
+        "param": []
       },
       {
         "title": "onMemoryWarning",
@@ -881,9 +854,7 @@
       {
         "title": "onNetworkStatusChange",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_network/#onNetworkStatusChange",
-        "param": [
-          "success"
-        ]
+        "param": []
       },
       {
         "title": "onAccelerometerChange",
@@ -930,15 +901,13 @@
       {
         "title": "getScreenBrightness",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_screen/#getScreenBrightness",
-        "param": [
-          "value"
-        ]
+        "param": []
       },
       {
         "title": "setKeepScreenOn",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_screen/#setKeepScreenOn",
         "param": [
-          "value"
+          "keepScreenOn"
         ]
       },
       {
@@ -959,9 +928,7 @@
       {
         "title": "addPhoneContact",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_call/#addPhoneContact",
-        "param": [
-          "phoneNumber"
-        ]
+        "param": []
       },
       {
         "title": "makePhoneCall",
@@ -980,9 +947,7 @@
       {
         "title": "getClipboardData",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_clipboard/#getClipboardData",
-        "param": [
-          "data"
-        ]
+        "param": []
       }
     ]
   },
@@ -1054,9 +1019,7 @@
       {
         "title": "requestPolymerPayment 百度电商开放平台：产品介绍",
         "href": "https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment",
-        "param": [
-          "orderInfo"
-        ]
+        "param": []
       },
       {
         "title": "chooseInvoiceTitle",
@@ -1073,9 +1036,7 @@
       {
         "title": "navigateBackSmartProgram",
         "href": "https://smartprogram.baidu.com/docs/develop/api/open_smartProgram/#navigateBackSmartProgram",
-        "param": [
-          "appKey"
-        ]
+        "param": []
       }
     ]
   }

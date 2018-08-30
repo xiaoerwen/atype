@@ -1,17 +1,23 @@
-const express = require('express');
+import express from 'express';
 const cheerio = require('cheerio');
 const superagent = require('superagent');
 const fs = require('fs');
 const path = require('path');
 const app = express();
-const host = 'https://smartprogram.baidu.com';
+
 const formData = require('./form.js'); // 转化数据格式
-var api_url = [];
+
+import { DICT } from './utils.js';
+const host = DICT.host;
+const mainPage = DICT.mainPage;
+
+let api_url = [];
 
 // 第一步：从某个页面的chapter抓取api
 function findData() {
     return new Promise((resolve, reject) => {
-        superagent.get(host + '/docs/develop/framework/app-service_getcurrentpages/')//请求页面地址
+        superagent.get(host + mainPage)//请求页面地址
+        .buffer(true)
         .end((err, sres) => {//页面获取到的数据
             if (err) {
                 reject(err);
@@ -22,7 +28,7 @@ function findData() {
             let $api = $('.m-doc-sidebar-nav-selected[data-name|="api"] > ul > li');
 
             $api.each((index, element) => {
-                var $eleItem = $(element).find('a');
+                let $eleItem = $(element).find('a');
                 api_url.push({
                     title: $eleItem.attr('href'),
                     content: []
@@ -35,7 +41,7 @@ function findData() {
                 fs.writeFileSync(path.join(__dirname, 'app.json'), JSON.stringify(api_url, null, 2));
                 resolve();
             }).catch((err) => {
-                console.log(000, err);
+                console.log(err);
                 throw err;
             });
         });
@@ -46,7 +52,9 @@ function findData() {
 function readTable(url) {
     return new Promise((resolve, reject) => {
         superagent.get(host + url.title)
+        .buffer(true)
         .end((err, sres) => {
+            console.log('000');
             let item = [];
             if (err) {
                 reject(err);
@@ -54,7 +62,7 @@ function readTable(url) {
 
             let $ = cheerio.load(sres.text);
             $('.article-entry tbody tr').each((index, element) => {
-                $el = $(element).find('a');
+                let $el = $(element).find('a');
                 let it = {
                     title: $el.text(),
                     href: $el.attr('href'),
@@ -77,14 +85,11 @@ function findTable() {
             readTable(api_url[i]).then((res) => {
                 console.log(333);
                 api_url[i] = res;
-
-                let tmp = findParam(api_url[i].content);
-                return tmp;
+                return findParam(api_url[i].content);
             }).then(() => {
                 console.log(444);
                 if (i == len - 1) {
-                    resolve();
-                    // return;
+                    resolve(i);
                 }
             }).catch((err) => {
                 throw err;
@@ -97,23 +102,46 @@ function findTable() {
 function readParam (obj, href) {
     return new Promise((resolve, reject) => {
         superagent.get(href)
+        .buffer(true)
         .end((err, sres) => {
             if (err) {
                 reject(err);
             }
 
             let $ = cheerio.load(sres.text);
-            let par = [];
-            $('.article-entry>table:nth-of-type(1)>tbody>tr').each((index, element) => {
-                console.log(1010);
-                $param = $(element).find('td:nth-of-type(1)');
-                $neccess = $(element).find('td:nth-of-type(3)');
-                console.log(33, $neccess.text());
-                if ($neccess.text() == '是') {
-                    par.push($param.text());
+            let title = obj.title;
+            let $el = $('#' + title);
+            let hasH2 = $el.nextAll().filter('h2');
+            // console.log('kkk', $whichTable);
+            let $hasTable;
+            if (hasH2) {
+                let hasH3 = $el.nextUntil('h2').filter('h3');
+                if (hasH3) {
+                    $hasTable = $el.nextUntil('h3').filter('table');
+                } else {
+                    $hasTable = $el.nextUntil('h2').filter('table');
                 }
-            });
-            obj.param = par;
+            } else {
+                let hasH3 = $el.nextAll().filter('h3');
+                if (hasH3) {
+                    $hasTable = $el.nextUntil('h3').filter('table');
+                } else {
+                    $hasTable = $el.nextAll().filter('table');
+                }
+            }
+            if ($hasTable) {
+                let par = [];
+                $hasTable.first().find('tbody > tr').each((index, element) => {
+                    console.log(1010);
+                    let $param = $(element).find('td:nth-of-type(1)');
+                    let $neccess = $(element).find('td:nth-of-type(3)');
+                    console.log(33, $neccess.text());
+                    if ($neccess.text() == '是') {
+                        par.push($param.text());
+                    }
+                });
+                obj.param = par;
+            }       
             console.log(1212, obj);
             resolve(obj);
         });
@@ -125,16 +153,15 @@ function findParam(content) {
     return new Promise((resolve) => {
         let len = content.length;
         for(let i = 0; i < len; i++) {
-            //console.log(555);
-            console.log(666, content[i].href);
             readParam(content[i], content[i].href).then((res) => {
+                console.log(666, content[i].href);
                 console.log(1313);
                 content[i] = res;
                 console.log(777, content[i]);
-                return 1;
+                return res;
             }).then(() => {
                 if (i == len - 1) {
-                    resolve();
+                    resolve(i);
                 }
             }).catch((err) => {
                 throw err;
