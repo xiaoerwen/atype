@@ -173,7 +173,9 @@
       {
         "title": "plantClassify",
         "href": "https://smartprogram.baidu.com/docs/develop/api/ai_classify/#plantClassify",
-        "param": []
+        "param": [
+          "image"
+        ]
       }
     ]
   },
@@ -1029,9 +1031,7 @@
       {
         "title": "navigateToSmartProgram",
         "href": "https://smartprogram.baidu.com/docs/develop/api/open_smartProgram/#navigateToSmartProgram",
-        "param": [
-          "appKey"
-        ]
+        "param": []
       },
       {
         "title": "navigateBackSmartProgram",

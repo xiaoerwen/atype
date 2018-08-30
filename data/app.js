@@ -85,9 +85,11 @@ function findTable() {
             readTable(api_url[i]).then((res) => {
                 console.log(333);
                 api_url[i] = res;
-                return findParam(api_url[i].content);
-            }).then(() => {
-                console.log(444);
+                return res;
+            }).then((res) => {
+                return findParam(res.content);
+            }).then((res) => {
+                console.log('444');
                 if (i == len - 1) {
                     resolve(i);
                 }
@@ -110,9 +112,15 @@ function readParam (obj, href) {
 
             let $ = cheerio.load(sres.text);
             let title = obj.title;
+            let p = /[\.\,\(\)]/g;
+            if (p.test(title)) {
+                title = title.replace(p, '-');
+                if (title.lastIndexOf('-') == title.length - 1) {
+                    title = title.substr(0, title.length - 1);
+                }
+            }
             let $el = $('#' + title);
             let hasH2 = $el.nextAll().filter('h2');
-            // console.log('kkk', $whichTable);
             let $hasTable;
             if (hasH2) {
                 let hasH3 = $el.nextUntil('h2').filter('h3');
@@ -158,8 +166,9 @@ function findParam(content) {
                 console.log(1313);
                 content[i] = res;
                 console.log(777, content[i]);
-                return res;
+                // return content[i];
             }).then(() => {
+                console.log('ttt');
                 if (i == len - 1) {
                     resolve(i);
                 }
