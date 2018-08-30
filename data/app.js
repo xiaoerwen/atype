@@ -1,20 +1,20 @@
 const express = require('express');
 const cheerio = require('cheerio');
-const async = require('async');
 const superagent = require('superagent');
 const fs = require('fs');
 const path = require('path');
 const app = express();
 const host = 'https://smartprogram.baidu.com';
-const formData = require('./form.js');
+const formData = require('./form.js'); // 转化数据格式
 var api_url = [];
 
+// 第一步：从某个页面的chapter抓取api
 function findData() {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         superagent.get(host + '/docs/develop/framework/app-service_getcurrentpages/')//请求页面地址
         .end((err, sres) => {//页面获取到的数据
             if (err) {
-                return next(err);
+                reject(err);
             }
             console.log(111);
 
@@ -28,24 +28,28 @@ function findData() {
                     content: []
                 });
             });
+            // 依次读取每个chapter的api
             findTable().then(() => {
-                console.log(333);
+                console.log(888);
+                // 数据写入文件
                 fs.writeFileSync(path.join(__dirname, 'app.json'), JSON.stringify(api_url, null, 2));
                 resolve();
             }).catch((err) => {
+                console.log(000, err);
                 throw err;
             });
         });
     });
 }
 
+// 第三步：读取表格里的api
 function readTable(url) {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         superagent.get(host + url.title)
         .end((err, sres) => {
             let item = [];
             if (err) {
-                return next(err);
+                reject(err);
             }
 
             let $ = cheerio.load(sres.text);
@@ -53,7 +57,8 @@ function readTable(url) {
                 $el = $(element).find('a');
                 let it = {
                     title: $el.text(),
-                    href: $el.attr('href')
+                    href: $el.attr('href'),
+                    param: []
                 }
                 item.push(it);
             });
@@ -63,27 +68,85 @@ function readTable(url) {
     });
 }
 
+// 第二步：对应每个api表格
 function findTable() {
     return new Promise((resolve) => {
         let len = api_url.length;
         for(let i = 0; i < len; i++) {
             console.log(222);
-            (()=>{readTable(api_url[i]).then((res) => {
+            readTable(api_url[i]).then((res) => {
+                console.log(333);
                 api_url[i] = res;
+
+                let tmp = findParam(api_url[i].content);
+                return tmp;
+            }).then(() => {
+                console.log(444);
+                if (i == len - 1) {
+                    resolve();
+                    // return;
+                }
+            }).catch((err) => {
+                throw err;
+            });
+        }
+    });
+}
+
+// 第五步：读取必需参数
+function readParam (obj, href) {
+    return new Promise((resolve, reject) => {
+        superagent.get(href)
+        .end((err, sres) => {
+            if (err) {
+                reject(err);
+            }
+
+            let $ = cheerio.load(sres.text);
+            let par = [];
+            $('.article-entry>table:nth-of-type(1)>tbody>tr').each((index, element) => {
+                console.log(1010);
+                $param = $(element).find('td:nth-of-type(1)');
+                $neccess = $(element).find('td:nth-of-type(3)');
+                console.log(33, $neccess.text());
+                if ($neccess.text() == '是') {
+                    par.push($param.text());
+                }
+            });
+            obj.param = par;
+            console.log(1212, obj);
+            resolve(obj);
+        });
+    });
+}
+
+// 第四步：
+function findParam(content) {
+    return new Promise((resolve) => {
+        let len = content.length;
+        for(let i = 0; i < len; i++) {
+            //console.log(555);
+            console.log(666, content[i].href);
+            readParam(content[i], content[i].href).then((res) => {
+                console.log(1313);
+                content[i] = res;
+                console.log(777, content[i]);
+                return 1;
+            }).then(() => {
                 if (i == len - 1) {
                     resolve();
                 }
             }).catch((err) => {
                 throw err;
-            });})();
+            });
         }
     });
 }
 
 app.get('/', async(req, res, next) => {
     findData().then(() => {
-        console.log(444);
-        formData.form();
+        console.log(999);
+        formData.form();  // 转化数据格式
     }).catch((err) => {
         throw err;
     });
