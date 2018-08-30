@@ -74,7 +74,7 @@
       "swan.removeStorage",
       "swan.removeStorageSync",
       "swan.clearStorage",
-      "swan.clearStorageSyn"
+      "swan.clearStorageSync"
     ]
   },
   {
@@ -110,18 +110,18 @@
       "swan.canvasContext.stroke",
       "swan.canvasContext.beginPath",
       "swan.canvasContext.closePath",
-      "swan.ccanvasContext.moveTo",
+      "swan.canvasContext.moveTo",
       "swan.canvasContext.lineTo",
       "swan.canvasContext.arc",
       "swan.canvasContext.scale",
       "swan.canvasContext.rotate",
       "swan.canvasContext.translate",
       "swan.canvasContext.clip",
-      "swan.canvasContext.setFontSizet",
+      "swan.canvasContext.setFontSize",
       "swan.canvasContext.fillText",
       "swan.canvasContext.setTextAlign",
       "swan.canvasContext.setTextBaseline",
-      "swan.canvasContext.drawImage”>showToast",
+      "swan.canvasContext.drawImage",
       "swan.canvasContext.setGlobalAlph",
       "swan.canvasContext.measureText",
       "swan.canvasContext.arcTo",
@@ -130,7 +130,7 @@
       "swan.canvasContext.createPattern",
       "swan.canvasContext.bezierCurveTo",
       "swan.canvasContext.quadraticCurveTo",
-      "swan.canvasContext.savet",
+      "swan.canvasContext.save",
       "swan.canvasContext.restore",
       "swan.canvasContext.draw",
       "swan.canvasContext.font",
@@ -220,7 +220,7 @@
       "swan.getSetting",
       "swan.onShareAppMessage",
       "swan.chooseAddress",
-      "swan.requestPolymerPayment 百度电商开放平台：产品介绍",
+      "swan.requestPolymerPayment",
       "swan.chooseInvoiceTitle",
       "swan.navigateToSmartProgram",
       "swan.navigateBackSmartProgram"

@@ -67,9 +67,7 @@
       {
         "title": "SocketTask",
         "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#SocketTask",
-        "param": [
-          "data"
-        ]
+        "param": []
       }
     ]
   },
@@ -370,7 +368,7 @@
         ]
       },
       {
-        "title": "clearStorageSyn",
+        "title": "clearStorageSync",
         "href": "https://smartprogram.baidu.com/docs/develop/api/storage_remove/#clearStorageSync",
         "param": []
       }
@@ -412,22 +410,30 @@
       {
         "title": "createCanvasContext",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#createCanvasContext",
-        "param": []
+        "param": [
+          "canvasId"
+        ]
       },
       {
         "title": "canvasToTempFilePath(OBJECT, this)",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasToTempFilePath-OBJECT-this",
-        "param": []
+        "param": [
+          "canvasId"
+        ]
       },
       {
         "title": "canvasContext.setFillStyle",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setFillStyle",
-        "param": []
+        "param": [
+          "color"
+        ]
       },
       {
         "title": "canvasContext.setStrokeStyle",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setStrokeStyle",
-        "param": []
+        "param": [
+          "color"
+        ]
       },
       {
         "title": "canvasContext.setShadow",
@@ -515,7 +521,7 @@
         "param": []
       },
       {
-        "title": "ccanvasContext.moveTo",
+        "title": "canvasContext.moveTo",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-moveTo",
         "param": []
       },
@@ -550,7 +556,7 @@
         "param": []
       },
       {
-        "title": "canvasContext.setFontSizet",
+        "title": "canvasContext.setFontSize",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setFontSize",
         "param": []
       },
@@ -570,7 +576,7 @@
         "param": []
       },
       {
-        "title": "canvasContext.drawImage”>showToast",
+        "title": "canvasContext.drawImage",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-drawImage",
         "param": []
       },
@@ -615,7 +621,7 @@
         "param": []
       },
       {
-        "title": "canvasContext.savet",
+        "title": "canvasContext.save",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-save",
         "param": []
       },
@@ -642,77 +648,119 @@
       {
         "title": "showToast",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_toast/#showToast",
-        "param": []
+        "param": [
+          "title"
+        ]
       },
       {
         "title": "showLoading",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_toast/#showLoading",
-        "param": []
+        "param": [
+          "title"
+        ]
       },
       {
         "title": "hideLoading",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_toast/#hideToast",
-        "param": []
+        "param": [
+          "title",
+          "content"
+        ]
       },
       {
         "title": "showModal",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_toast/#showModal",
-        "param": []
+        "param": [
+          "title",
+          "content"
+        ]
       },
       {
         "title": "showActionSheet",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_toast/#showActionSheet",
-        "param": []
+        "param": [
+          "itemList"
+        ]
       },
       {
         "title": "setNavigationBarTitle",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#setNavigationBarTitle",
-        "param": []
+        "param": [
+          "title"
+        ]
       },
       {
         "title": "showNavigationBarLoading",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#showNavigationBarLoading",
-        "param": []
+        "param": [
+          "frontColor",
+          "backgroundColor"
+        ]
       },
       {
         "title": "hideNavigationBarLoading",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#hideNavigationBarLoading",
-        "param": []
+        "param": [
+          "frontColor",
+          "backgroundColor"
+        ]
       },
       {
         "title": "setNavigationBarColor",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#setNavigationBarColor",
-        "param": []
+        "param": [
+          "frontColor",
+          "backgroundColor"
+        ]
       },
       {
         "title": "setTabBarBadge",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#setTabBarBadge",
-        "param": []
+        "param": [
+          "index",
+          "text"
+        ]
       },
       {
         "title": "removeTabBarBadge",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#removeTabBarBadge",
-        "param": []
+        "param": [
+          "index"
+        ]
       },
       {
         "title": "showTabBarRedDot",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#showTabBarRedDot",
-        "param": []
+        "param": [
+          "index"
+        ]
       },
       {
         "title": "hideTabBarRedDot",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#hideTabBarRedDot",
-        "param": []
+        "param": [
+          "index"
+        ]
       },
       {
         "title": "setTabBarStyle",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#setTabBarStyle",
-        "param": []
+        "param": [
+          "color",
+          "selectedColor",
+          "backgroundColor",
+          "borderStyle"
+        ]
       },
       {
         "title": "setTabBarItem",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#setTabBarItem",
-        "param": []
+        "param": [
+          "index",
+          "text",
+          "iconPath",
+          "selectedIconPath"
+        ]
       },
       {
         "title": "showTabBar",
@@ -727,17 +775,23 @@
       {
         "title": "navigateTo",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tab/#navigateTo",
-        "param": []
+        "param": [
+          "url"
+        ]
       },
       {
         "title": "redirectTo",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tab/#redirectTo",
-        "param": []
+        "param": [
+          "url"
+        ]
       },
       {
         "title": "switchTab",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tab/#switchTab",
-        "param": []
+        "param": [
+          "url"
+        ]
       },
       {
         "title": "navigateBack",
@@ -747,7 +801,9 @@
       {
         "title": "reLaunch",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tab/#reLaunch",
-        "param": []
+        "param": [
+          "url"
+        ]
       },
       {
         "title": "createAnimation",
@@ -757,7 +813,9 @@
       {
         "title": "pageScrollTo",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_pageScrollTo/#pageScrollTo",
-        "param": []
+        "param": [
+          "scrollTop"
+        ]
       },
       {
         "title": "onPullDownRefresh",
@@ -827,9 +885,7 @@
       {
         "title": "getSystemInfo",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_sys/#getSystemInfo",
-        "param": [
-          "success"
-        ]
+        "param": []
       },
       {
         "title": "getSystemInfoSync",
@@ -849,9 +905,7 @@
       {
         "title": "getNetworkType",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_network/#getNetworkType",
-        "param": [
-          "success"
-        ]
+        "param": []
       },
       {
         "title": "onNetworkStatusChange",
@@ -896,9 +950,7 @@
       {
         "title": "setScreenBrightness",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_screen/#setScreenBrightness",
-        "param": [
-          "value"
-        ]
+        "param": []
       },
       {
         "title": "getScreenBrightness",
@@ -908,9 +960,7 @@
       {
         "title": "setKeepScreenOn",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_screen/#setKeepScreenOn",
-        "param": [
-          "keepScreenOn"
-        ]
+        "param": []
       },
       {
         "title": "onUserCaptureScreen",
@@ -935,16 +985,12 @@
       {
         "title": "makePhoneCall",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_call/#makePhoneCall",
-        "param": [
-          "phoneNumber"
-        ]
+        "param": []
       },
       {
         "title": "setClipboardData",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_clipboard/#setClipboardData",
-        "param": [
-          "data"
-        ]
+        "param": []
       },
       {
         "title": "getClipboardData",
@@ -984,9 +1030,7 @@
       {
         "title": "authorize",
         "href": "https://smartprogram.baidu.com/docs/develop/api/open_authorize/#authorize",
-        "param": [
-          "scope"
-        ]
+        "param": []
       },
       {
         "title": "getSwanId",
@@ -1019,9 +1063,11 @@
         "param": []
       },
       {
-        "title": "requestPolymerPayment 百度电商开放平台：产品介绍",
+        "title": "requestPolymerPayment",
         "href": "https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment",
-        "param": []
+        "param": [
+          "orderInfo"
+        ]
       },
       {
         "title": "chooseInvoiceTitle",
@@ -1031,7 +1077,9 @@
       {
         "title": "navigateToSmartProgram",
         "href": "https://smartprogram.baidu.com/docs/develop/api/open_smartProgram/#navigateToSmartProgram",
-        "param": []
+        "param": [
+          "appKey"
+        ]
       },
       {
         "title": "navigateBackSmartProgram",

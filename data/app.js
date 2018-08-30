@@ -68,6 +68,23 @@ function readTable(url) {
                     href: $el.attr('href'),
                     param: []
                 }
+                if (it.title == 'canvasContext.drawImage”>showToast') {
+                    it.title = 'canvasContext.drawImage';
+                } else if (it.title == 'requestPolymerPayment 百度电商开放平台：产品介绍') {
+                    it.title = 'requestPolymerPayment';
+                } else if (it.title == 'canvasContext.savet') {
+                    it.title = 'canvasContext.save';
+                } else if (it.title == 'canvasContext.strokeTextt') {
+                    it.title = 'canvasContext.strokeTextt';
+                } else if (it.title == 'clearStorageSyn') {
+                    it.title = 'clearStorageSync';
+                } else if (it.title == 'canvasContext.setFontSizet') {
+                    it.title = 'canvasContext.setFontSize';
+                } else if (it.title == 'canvasContext.strokeTextt') {
+                    it.title = 'canvasContext.strokeText';
+                } else if (it.title == 'ccanvasContext.moveTo') {
+                    it.title = 'canvasContext.moveTo';
+                }
                 item.push(it);
             });
             url.content = item;
@@ -85,11 +102,9 @@ function findTable() {
             readTable(api_url[i]).then((res) => {
                 console.log(333);
                 api_url[i] = res;
-                return res;
-            }).then((res) => {
-                return findParam(res.content);
-            }).then((res) => {
-                console.log('444');
+                return findParam(api_url[i].content);
+            }).then(() => {
+                console.log(444);
                 if (i == len - 1) {
                     resolve(i);
                 }
@@ -112,12 +127,36 @@ function readParam (obj, href) {
 
             let $ = cheerio.load(sres.text);
             let title = obj.title;
+            // if (title == 'canvasContext.drawImage”>showToast') {
+            //     title = 'canvasContext.drawImage';
+            // } else if (title == 'requestPolymerPayment 百度电商开放平台：产品介绍') {
+            //     title = 'requestPolymerPayment';
+            // } else if (title == 'canvasContext.savet') {
+            //     title = 'canvasContext.save';
+            // } else if (title == 'canvasContext.strokeTextt') {
+            //     title = 'canvasContext.strokeTextt';
+            // } else if (title == 'clearStorageSyn') {
+            //     title = 'clearStorageSync';
+            // } else if (title == 'canvasContext.setFontSizet') {
+            //     title = 'canvasContext.setFontSize';
+            // } else if (title == 'canvasContext.strokeTextt') {
+            //     title = 'canvasContext.strokeText';
+            // } else if (title == 'ccanvasContext.moveTo') {
+            //     title = 'canvasContext.moveTo';
+            // }
+            console.log('***', title);
             let p = /[\.\,\(\)]/g;
             if (p.test(title)) {
                 title = title.replace(p, '-');
-                if (title.lastIndexOf('-') == title.length - 1) {
-                    title = title.substr(0, title.length - 1);
+                let p3 = /[\-*]$/g;
+                while (p3.test(title)) {
+                    title = title.replace(p3, '');
                 }
+                let p2 = /[\[\]\ ]/g;
+                if (p2.test(title)) {
+                    title = title.replace(p2, '');
+                }
+                console.log('+++', title);
             }
             let $el = $('#' + title);
             let hasH2 = $el.nextAll().filter('h2');
@@ -143,7 +182,7 @@ function readParam (obj, href) {
                     console.log(1010);
                     let $param = $(element).find('td:nth-of-type(1)');
                     let $neccess = $(element).find('td:nth-of-type(3)');
-                    console.log(33, $neccess.text());
+                    // console.log(33, $neccess.text());
                     if ($neccess.text() == '是') {
                         par.push($param.text());
                     }
@@ -166,9 +205,8 @@ function findParam(content) {
                 console.log(1313);
                 content[i] = res;
                 console.log(777, content[i]);
-                // return content[i];
+                return res;
             }).then(() => {
-                console.log('ttt');
                 if (i == len - 1) {
                     resolve(i);
                 }
