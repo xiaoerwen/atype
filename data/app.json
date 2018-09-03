@@ -67,7 +67,9 @@
       {
         "title": "SocketTask",
         "href": "https://smartprogram.baidu.com/docs/develop/api/net_webSocket/#SocketTask",
-        "param": []
+        "param": [
+          "data"
+        ]
       }
     ]
   },
@@ -596,7 +598,7 @@
         "param": []
       },
       {
-        "title": "canvasContext.strokeTextt",
+        "title": "canvasContext.strokeText",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-strokeText",
         "param": []
       },
@@ -885,7 +887,9 @@
       {
         "title": "getSystemInfo",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_sys/#getSystemInfo",
-        "param": []
+        "param": [
+          "success"
+        ]
       },
       {
         "title": "getSystemInfoSync",
@@ -905,7 +909,9 @@
       {
         "title": "getNetworkType",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_network/#getNetworkType",
-        "param": []
+        "param": [
+          "success"
+        ]
       },
       {
         "title": "onNetworkStatusChange",
@@ -950,7 +956,9 @@
       {
         "title": "setScreenBrightness",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_screen/#setScreenBrightness",
-        "param": []
+        "param": [
+          "value"
+        ]
       },
       {
         "title": "getScreenBrightness",
@@ -960,7 +968,9 @@
       {
         "title": "setKeepScreenOn",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_screen/#setKeepScreenOn",
-        "param": []
+        "param": [
+          "keepScreenOn"
+        ]
       },
       {
         "title": "onUserCaptureScreen",
@@ -985,12 +995,16 @@
       {
         "title": "makePhoneCall",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_call/#makePhoneCall",
-        "param": []
+        "param": [
+          "phoneNumber"
+        ]
       },
       {
         "title": "setClipboardData",
         "href": "https://smartprogram.baidu.com/docs/develop/api/device_clipboard/#setClipboardData",
-        "param": []
+        "param": [
+          "data"
+        ]
       },
       {
         "title": "getClipboardData",
@@ -1030,7 +1044,9 @@
       {
         "title": "authorize",
         "href": "https://smartprogram.baidu.com/docs/develop/api/open_authorize/#authorize",
-        "param": []
+        "param": [
+          "scope"
+        ]
       },
       {
         "title": "getSwanId",

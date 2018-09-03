@@ -38,7 +38,7 @@ function findData() {
             findTable().then(() => {
                 console.log(888);
                 // 数据写入文件
-                fs.writeFileSync(path.join(__dirname, 'app.json'), JSON.stringify(api_url, null, 2));
+                // fs.writeFileSync(path.join(__dirname, 'app.json'), JSON.stringify(api_url, null, 2));
                 resolve();
             }).catch((err) => {
                 console.log(err);
@@ -68,22 +68,10 @@ function readTable(url) {
                     href: $el.attr('href'),
                     param: []
                 }
-                if (it.title == 'canvasContext.drawImage”>showToast') {
-                    it.title = 'canvasContext.drawImage';
-                } else if (it.title == 'requestPolymerPayment 百度电商开放平台：产品介绍') {
+                if (it.title == 'requestPolymerPayment 百度电商开放平台：产品介绍') {
                     it.title = 'requestPolymerPayment';
-                } else if (it.title == 'canvasContext.savet') {
-                    it.title = 'canvasContext.save';
-                } else if (it.title == 'canvasContext.strokeTextt') {
-                    it.title = 'canvasContext.strokeTextt';
                 } else if (it.title == 'clearStorageSyn') {
                     it.title = 'clearStorageSync';
-                } else if (it.title == 'canvasContext.setFontSizet') {
-                    it.title = 'canvasContext.setFontSize';
-                } else if (it.title == 'canvasContext.strokeTextt') {
-                    it.title = 'canvasContext.strokeText';
-                } else if (it.title == 'ccanvasContext.moveTo') {
-                    it.title = 'canvasContext.moveTo';
                 }
                 item.push(it);
             });
@@ -127,24 +115,6 @@ function readParam (obj, href) {
 
             let $ = cheerio.load(sres.text);
             let title = obj.title;
-            // if (title == 'canvasContext.drawImage”>showToast') {
-            //     title = 'canvasContext.drawImage';
-            // } else if (title == 'requestPolymerPayment 百度电商开放平台：产品介绍') {
-            //     title = 'requestPolymerPayment';
-            // } else if (title == 'canvasContext.savet') {
-            //     title = 'canvasContext.save';
-            // } else if (title == 'canvasContext.strokeTextt') {
-            //     title = 'canvasContext.strokeTextt';
-            // } else if (title == 'clearStorageSyn') {
-            //     title = 'clearStorageSync';
-            // } else if (title == 'canvasContext.setFontSizet') {
-            //     title = 'canvasContext.setFontSize';
-            // } else if (title == 'canvasContext.strokeTextt') {
-            //     title = 'canvasContext.strokeText';
-            // } else if (title == 'ccanvasContext.moveTo') {
-            //     title = 'canvasContext.moveTo';
-            // }
-            console.log('***', title);
             let p = /[\.\,\(\)]/g;
             if (p.test(title)) {
                 title = title.replace(p, '-');
@@ -156,7 +126,6 @@ function readParam (obj, href) {
                 if (p2.test(title)) {
                     title = title.replace(p2, '');
                 }
-                console.log('+++', title);
             }
             let $el = $('#' + title);
             let hasH2 = $el.nextAll().filter('h2');
@@ -182,7 +151,6 @@ function readParam (obj, href) {
                     console.log(1010);
                     let $param = $(element).find('td:nth-of-type(1)');
                     let $neccess = $(element).find('td:nth-of-type(3)');
-                    // console.log(33, $neccess.text());
                     if ($neccess.text() == '是') {
                         par.push($param.text());
                     }
@@ -205,6 +173,7 @@ function findParam(content) {
                 console.log(1313);
                 content[i] = res;
                 console.log(777, content[i]);
+                fs.writeFileSync(path.join(__dirname, 'app.json'), JSON.stringify(api_url, null, 2));
                 return res;
             }).then(() => {
                 if (i == len - 1) {
@@ -219,8 +188,10 @@ function findParam(content) {
 
 app.get('/', async(req, res, next) => {
     findData().then(() => {
-        console.log(999);
-        formData.form();  // 转化数据格式
+        // console.log(999);
+        fs.writeFileSync(path.join(__dirname, 'app.json'), JSON.stringify(api_url, null, 2));
+        console.log(999, '写入成功');
+        // formData.form();  // 转化数据格式
     }).catch((err) => {
         throw err;
     });
