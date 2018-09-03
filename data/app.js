@@ -5,9 +5,9 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
-const formData = require('./form.js'); // 转化数据格式
+// const formData = require('./form.js'); // 转化数据格式
 
-import { DICT } from './utils.js';
+import { DICT } from './config.js';
 const host = DICT.host;
 const mainPage = DICT.mainPage;
 
@@ -37,8 +37,6 @@ function findData() {
             // 依次读取每个chapter的api
             findTable().then(() => {
                 console.log(888);
-                // 数据写入文件
-                // fs.writeFileSync(path.join(__dirname, 'app.json'), JSON.stringify(api_url, null, 2));
                 resolve();
             }).catch((err) => {
                 console.log(err);
@@ -68,11 +66,14 @@ function readTable(url) {
                     href: $el.attr('href'),
                     param: []
                 }
+                // 文档拼写有错，待文档修正可去除
+                /********/
                 if (it.title == 'requestPolymerPayment 百度电商开放平台：产品介绍') {
                     it.title = 'requestPolymerPayment';
                 } else if (it.title == 'clearStorageSyn') {
                     it.title = 'clearStorageSync';
                 }
+                /********/
                 item.push(it);
             });
             url.content = item;
@@ -173,6 +174,7 @@ function findParam(content) {
                 console.log(1313);
                 content[i] = res;
                 console.log(777, content[i]);
+                // 数据写入文件
                 fs.writeFileSync(path.join(__dirname, 'app.json'), JSON.stringify(api_url, null, 2));
                 return res;
             }).then(() => {
@@ -186,10 +188,8 @@ function findParam(content) {
     });
 }
 
-app.get('/', async(req, res, next) => {
+app.get('/', (req, res, next) => {
     findData().then(() => {
-        // console.log(999);
-        fs.writeFileSync(path.join(__dirname, 'app.json'), JSON.stringify(api_url, null, 2));
         console.log(999, '写入成功');
         // formData.form();  // 转化数据格式
     }).catch((err) => {
