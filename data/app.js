@@ -107,6 +107,9 @@ function readParam (obj, href) {
             }
 
             let $ = cheerio.load(sres.text);
+            if (obj.title == "requestPolymerPayment 百度电商开放平台：产品介绍") {
+                obj.title = 'requestPolymerPayment';
+            }
             let title = obj.title;
             let p = /[\.\,\(\)]/g;
             if (p.test(title)) {

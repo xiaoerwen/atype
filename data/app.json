@@ -1093,9 +1093,11 @@
         "param": []
       },
       {
-        "title": "requestPolymerPayment 百度电商开放平台：产品介绍",
+        "title": "requestPolymerPayment",
         "href": "https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment",
-        "param": []
+        "param": [
+          "orderInfo"
+        ]
       },
       {
         "title": "chooseInvoiceTitle",
