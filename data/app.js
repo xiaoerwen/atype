@@ -78,7 +78,7 @@ function readTable(url) {
 function findTable() {
     return new Promise((resolve) => {
         let count = 0;
-        async.mapLimit(api_url, 50, (url) => {
+        async.mapLimit(api_url, 100, (url) => {
             count++;
             console.log('现在的并发数是', count, '，正在抓取的是', url);
             readTable(url).then((res) => {
@@ -160,7 +160,7 @@ function readParam (obj, href) {
 function findParam(content) {
     return new Promise((resolve) => {
         let count = 0;
-        async.mapLimit(content, 50, (url) => {
+        async.mapLimit(content, 100, (url) => {
             count++;
             console.log('现在的并发数是', count, '，正在抓取的是', url);
             readParam(url, url.href).then((res) => {

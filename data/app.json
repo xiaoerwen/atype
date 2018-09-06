@@ -694,57 +694,89 @@
       {
         "title": "showActionSheet",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_toast/#showActionSheet",
-        "param": []
+        "param": [
+          "itemList"
+        ]
       },
       {
         "title": "setNavigationBarTitle",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#setNavigationBarTitle",
-        "param": []
+        "param": [
+          "title"
+        ]
       },
       {
         "title": "showNavigationBarLoading",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#showNavigationBarLoading",
-        "param": []
+        "param": [
+          "frontColor",
+          "backgroundColor"
+        ]
       },
       {
         "title": "hideNavigationBarLoading",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#hideNavigationBarLoading",
-        "param": []
+        "param": [
+          "frontColor",
+          "backgroundColor"
+        ]
       },
       {
         "title": "setNavigationBarColor",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#setNavigationBarColor",
-        "param": []
+        "param": [
+          "frontColor",
+          "backgroundColor"
+        ]
       },
       {
         "title": "setTabBarBadge",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#setTabBarBadge",
-        "param": []
+        "param": [
+          "index",
+          "text"
+        ]
       },
       {
         "title": "removeTabBarBadge",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#removeTabBarBadge",
-        "param": []
+        "param": [
+          "index"
+        ]
       },
       {
         "title": "showTabBarRedDot",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#showTabBarRedDot",
-        "param": []
+        "param": [
+          "index"
+        ]
       },
       {
         "title": "hideTabBarRedDot",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#hideTabBarRedDot",
-        "param": []
+        "param": [
+          "index"
+        ]
       },
       {
         "title": "setTabBarStyle",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#setTabBarStyle",
-        "param": []
+        "param": [
+          "color",
+          "selectedColor",
+          "backgroundColor",
+          "borderStyle"
+        ]
       },
       {
         "title": "setTabBarItem",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#setTabBarItem",
-        "param": []
+        "param": [
+          "index",
+          "text",
+          "iconPath",
+          "selectedIconPath"
+        ]
       },
       {
         "title": "showTabBar",
@@ -759,17 +791,23 @@
       {
         "title": "navigateTo",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tab/#navigateTo",
-        "param": []
+        "param": [
+          "url"
+        ]
       },
       {
         "title": "redirectTo",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tab/#redirectTo",
-        "param": []
+        "param": [
+          "url"
+        ]
       },
       {
         "title": "switchTab",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tab/#switchTab",
-        "param": []
+        "param": [
+          "url"
+        ]
       },
       {
         "title": "navigateBack",
@@ -779,7 +817,9 @@
       {
         "title": "reLaunch",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_tab/#reLaunch",
-        "param": []
+        "param": [
+          "url"
+        ]
       },
       {
         "title": "createAnimation",
@@ -789,7 +829,9 @@
       {
         "title": "pageScrollTo",
         "href": "https://smartprogram.baidu.com/docs/develop/api/show_pagescrollto/#pageScrollTo",
-        "param": []
+        "param": [
+          "scrollTop"
+        ]
       },
       {
         "title": "onPullDownRefresh",
