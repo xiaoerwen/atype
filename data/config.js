@@ -1,5 +1,5 @@
 export const DICT = {
-    host: 'smartprogram.baidu.com',
+    host: 'https://smartprogram.baidu.com',
     // 初始页面路径
     mainPage: '/docs/develop/framework/app-service_getcurrentpages/',
     // API总列下的分类

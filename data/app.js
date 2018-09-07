@@ -26,7 +26,7 @@ let apiData = [];
 
 // 第一步：从页面的chapter栏抓取API下各个分类
 function findApiCaterioges() {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
         superagent.get(host + mainPage) // 请求页面地址
         .end((err, sres) => { // 页面获取到的数据
             if (err) {
@@ -51,10 +51,10 @@ function findApiCaterioges() {
 
 // 第二步：依次抓取每个分类下的所有API
 function findApi() {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
         let count = 0;
         // 并发处理多个请求
-        mapLimit(apiData, 100, (category) => {
+        mapLimit(apiData, 100, category => {
             count++;
             console.log('现在的并发数是', count, '，正在抓取的是', category);
             superagent.get(host + category.title)
@@ -144,9 +144,9 @@ function isNeccessParam ($, obj) {
 
 // 读取单个API的必需参数
 function findParamOfApi(content) {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
         let count = 0;
-        mapLimit(content, 100, (api) => {
+        mapLimit(content, 100, api => {
             count++;
             console.log('现在的并发数是', count, '，正在抓取的是', api);
             superagent.get(api.href)
@@ -196,7 +196,7 @@ app.get('/', (req, res) => {
         // 第四步：将数据写入文件
         fs.writeFileSync(path.join(__dirname, fileName), JSON.stringify(apiData, null, 2));
         console.log(105, '写入文件成功');
-        res.send('开始读取数据...');
+        res.send('读取数据成功');
     }).catch((err) => {
         console.log(err);
         throw err;
