@@ -6,6 +6,7 @@
 import express from 'express';
 import cheerio from 'cheerio';
 import superagent from 'superagent';
+import async from 'async';
 import mapLimit from 'async/mapLimit';
 import fs from 'fs';
 import path from 'path';
@@ -56,10 +57,8 @@ function findApiCaterioges() {
 // 第二步：依次抓取每个分类下的所有API
 function findApi() {
     return new Promise(resolve => {
-        let count = 0;
         // 并发处理多个请求
-        mapLimit(apiData, 100, category => {
-            count++;
+        async.mapLimit(apiData, 100, (category, callback) => {
             // console.log('现在的并发数是', count, '，正在抓取的是', category);
             superagent.get(host + category.title)
             .end((err, sres) => {
@@ -80,11 +79,13 @@ function findApi() {
                     item.push(it);
                 });
                 category.content = item;
-                count--;
-                if (count === 0) {
-                    resolve();
-                }
+                callback();
             });
+        }, err => {
+            if (err) {
+                throw err;
+            }
+            resolve();
         });
     });
 }
@@ -138,9 +139,7 @@ function isNeccessParam($, obj) {
 // 读取单个API的必需参数
 function findParamOfApi(content) {
     return new Promise(resolve => {
-        let count = 0;
-        mapLimit(content, 100, api => {
-            count++;
+        mapLimit(content, 100, (api, callback) => {
             // console.log('现在的并发数是', count, '，正在抓取的是', api);
             superagent.get(api.href)
             .end((err, sres) => {
@@ -152,13 +151,13 @@ function findParamOfApi(content) {
                 let $ = cheerio.load(sres.text);
                 // 判断是否必需参数
                 api = isNeccessParam($, api);
-                count--;
-                if (count === 0) {
-                    resolve(count);
-                }
+                callback();
             });
         }, err => {
-            throw err;
+            if (err) {
+                throw err;
+            }
+            resolve();
         });
     });
 }
@@ -188,7 +187,6 @@ app.get('/', (req, res) => {
         fs.writeFileSync(path.join(__dirname, fileName), JSON.stringify(apiData, null, 2));
         console.log(105, '写入文件成功');
     }).catch(err => {
-        // console.log(err);
         throw err;
     });
 }).listen(8811);
