@@ -6,7 +6,6 @@
 import express from 'express';
 import cheerio from 'cheerio';
 import superagent from 'superagent';
-import async from 'async';
 import mapLimit from 'async/mapLimit';
 import fs from 'fs';
 import path from 'path';
@@ -37,7 +36,6 @@ function findApiCaterioges() {
             if (err) {
                 throw err;
             }
-            // console.log(100, '开始抓取API下的分类啦～');
 
             let $ = cheerio.load(sres.text); // 用cheerio解析页面数据
             let $api = $(categoryClass);
@@ -58,11 +56,9 @@ function findApiCaterioges() {
 function findApi() {
     return new Promise(resolve => {
         // 并发处理多个请求
-        async.mapLimit(apiData, 100, (category, callback) => {
-            // console.log('现在的并发数是', count, '，正在抓取的是', category);
+        mapLimit(apiData, 100, (category, callback) => {
             superagent.get(host + category.title)
             .end((err, sres) => {
-                // console.log(101, '开始读取分类下的API啦～');
                 let item = [];
                 if (err) {
                     throw err;
@@ -111,7 +107,7 @@ function isNeccessParam($, obj) {
         }
     }
     let $el = $('#' + title);
-    // API多为h2标题
+    // API为h2标题
     let hasH2 = $el.nextAll().filter(apiTitle);
     let $hasTable;
     if (hasH2) {
@@ -140,14 +136,12 @@ function isNeccessParam($, obj) {
 function findParamOfApi(content) {
     return new Promise(resolve => {
         mapLimit(content, 100, (api, callback) => {
-            // console.log('现在的并发数是', count, '，正在抓取的是', api);
             superagent.get(api.href)
             .end((err, sres) => {
                 if (err) {
                     throw err;
                 }
 
-                // console.log(103, '开始抓取每个API的参数啦～');
                 let $ = cheerio.load(sres.text);
                 // 判断是否必需参数
                 api = isNeccessParam($, api);
