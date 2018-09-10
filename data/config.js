@@ -1,3 +1,8 @@
+/**
+ * @file app.js
+ * @author caixiaowen
+ */
+
 export const DICT = {
     host: 'https://smartprogram.baidu.com',
     // 初始页面路径
