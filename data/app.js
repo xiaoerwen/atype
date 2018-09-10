@@ -117,6 +117,9 @@ function isNeccessParam($, obj) {
         // API为h2标题时，需保证不受下面其他API的影响
         $hasTable = $el.nextUntil(apiTitle).filter(apiParamTable);
     }
+    else {
+        $hasTable = $el.nextAll().filter(apiParamTable);
+    }
     // 参数描述写在表格中，所以从表格读取
     if ($hasTable) {
         let par = [];
