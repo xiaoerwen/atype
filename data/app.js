@@ -18,7 +18,6 @@ const {
     paramTable,
     apiHtml,
     apiTitle,
-    apiTitleAnother,
     apiParamTable,
     paramColumn,
     neccessColumn,
@@ -116,24 +115,7 @@ function isNeccessParam($, obj) {
     let $hasTable;
     if (hasH2) {
         // API为h2标题时，需保证不受下面其他API的影响
-        let hasH3 = $el.nextUntil(apiTitle).filter(apiTitleAnother);
-        if (hasH3) {
-            $hasTable = $el.nextUntil(apiTitleAnother).filter(apiParamTable);
-        }
-        else {
-            $hasTable = $el.nextUntil(apiTitle).filter(apiParamTable);
-        }
-    }
-    else {
-        // 有的API为h3标题
-        let hasH3 = $el.nextAll().filter(apiTitleAnother);
-        // API为h3标题时，也需保证不受下面其他API的影响
-        if (hasH3) {
-            $hasTable = $el.nextUntil(apiTitleAnother).filter(apiParamTable);
-        }
-        else {
-            $hasTable = $el.nextAll().filter(apiParamTable);
-        }
+        $hasTable = $el.nextUntil(apiTitle).filter(apiParamTable);
     }
     // 参数描述写在表格中，所以从表格读取
     if ($hasTable) {
@@ -201,7 +183,7 @@ app.get('/', (req, res) => {
     .then(() => {
         // 第四步：将数据写入文件
         fs.writeFileSync(path.join(__dirname, fileName), JSON.stringify(apiData, null, 2));
-        // console.log(105, '写入文件成功');
+        console.log(105, '写入文件成功');
     }).catch(err => {
         // console.log(err);
         throw err;
