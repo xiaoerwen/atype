@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "data": "babel-node ./data/app.js --presets es2015,stage-2"
+    "data": "babel-node ./data/main.js --presets es2015,stage-2"
   },
   "repository": {
     "type": "git",

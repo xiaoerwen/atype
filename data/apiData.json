@@ -1,0 +1,3769 @@
+[
+  {
+    "name": "/docs/develop/api/net/",
+    "apis": [
+      {
+        "name": "request",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_request/#request",
+        "explation": "发起网络请求",
+        "param": [
+          {
+            "param": "url",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "data",
+            "type": "Object/String",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "header",
+            "type": "Object",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "method",
+            "type": "String",
+            "isRequired": "否",
+            "default": "GET （大写）"
+          },
+          {
+            "param": "dataType",
+            "type": "String",
+            "isRequired": "否",
+            "default": "json"
+          },
+          {
+            "param": "responseType",
+            "type": "String",
+            "isRequired": "否",
+            "default": "text"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "uploadFile",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_uploadfile/#uploadFile",
+        "explation": "将本地资源上传到开发者服务器，客户端发起一个 HTTPS POST 请求，其中 content-type 为 multipart/form-data如页面通过 swan.chooseImage 等接口获取到一个本地资源的临时文件路径后，可通过此接口将本地资源上传到指定服务器。",
+        "param": [
+          {
+            "param": "url",
+            "type": "String",
+            "isRequired": "是",
+            "default": "开发者服务器 url"
+          },
+          {
+            "param": "filePath",
+            "type": "String",
+            "isRequired": "是",
+            "default": "要上传文件资源的路径"
+          },
+          {
+            "param": "name",
+            "type": "String",
+            "isRequired": "是",
+            "default": "文件对应的 key , 开发者在服务器端通过这个 key 可以获取到文件二进制内容。"
+          },
+          {
+            "param": "header",
+            "type": "Object",
+            "isRequired": "否",
+            "default": "HTTP 请求 Header, header 中不能设置 Referer 。"
+          },
+          {
+            "param": "formData",
+            "type": "Object",
+            "isRequired": "否",
+            "default": "HTTP 请求中其他额外的 form data"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "downloadFile",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_uploadfile/#downloadFile",
+        "explation": "下载文件资源到本地，客户端直接发起一个 HTTP GET 请求，返回文件的本地临时路径",
+        "param": [
+          {
+            "param": "url",
+            "type": "String",
+            "isRequired": "是",
+            "default": "下载资源的 url"
+          },
+          {
+            "param": "header",
+            "type": "Object",
+            "isRequired": "否",
+            "default": "HTTP 请求 Header，header 中不能设置 Referer"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "下载成功后以 tempFilePath 的形式传给页面，res = {tempFilePath: ‘文件的临时路径’}"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "connectSocket",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_websocket/#connectSocket",
+        "explation": "创建一个 WebSocket 连接。",
+        "param": [
+          {
+            "param": "url",
+            "type": "String",
+            "isRequired": "是",
+            "default": "开发者服务器接口地址，必须是 wss 协议，且域名必须是后台配置的合法域名"
+          },
+          {
+            "param": "protocolsArray",
+            "type": "StringArray",
+            "isRequired": "否",
+            "default": "子协议数组"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "onSocketOpen",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_websocket/#onSocketOpen",
+        "explation": "监听 WebSocket 连接打开事件。"
+      },
+      {
+        "name": "onSocketError",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_websocket/#onSocketError",
+        "explation": "监听 WebSocket 错误"
+      },
+      {
+        "name": "sendSocketMessage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_websocket/#sendSocketMessage",
+        "explation": "通过 WebSocket 连接发送数据，需要先调用 swan.connectSocket，并在 swan.onSocketOpen 回调之后才能发送。",
+        "param": [
+          {
+            "param": "data",
+            "type": "String/ArrayBuffer",
+            "isRequired": "是",
+            "default": "需要发送的内容"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "onSocketMessage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_websocket/#onSocketMessage",
+        "explation": "监听 WebSocket 接受到服务器的消息事件"
+      },
+      {
+        "name": "closeSocket",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_websocket/#clouseSocketMessage",
+        "explation": "关闭 WebSocket 连接。必须在 WebSocket 打开期间调用 swan.closeSocket 才能关闭。",
+        "param": [
+          {
+            "param": "code",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "一个数字值表示关闭连接的状态号，表示连接被关闭的原因。如果这个参数没有被指定，默认的取值是1000 （表示正常连接关闭）"
+          },
+          {
+            "param": "reason",
+            "type": "String",
+            "isRequired": "否",
+            "default": "一个可读的字符串，表示连接被关闭的原因。这个字符串必须是不长于123字节的 UTF-8 文本（不是字符）"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "onSocketClose",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_websocket/#onSocketClose",
+        "explation": "监听 WebSocket 关闭。"
+      },
+      {
+        "name": "SocketTask",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/net_websocket/#SocketTask",
+        "explation": "WebSocket 任务，可通过 swan.connectSocket() 接口创建返回。",
+        "param": [
+          {
+            "param": "data",
+            "type": "String/ArrayBuffer",
+            "isRequired": "是",
+            "default": "需要发送的内容"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/docs/develop/api/ai/",
+    "apis": [
+      {
+        "name": "ocrIdCard",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_ocr/#ocrIdCard",
+        "explation": "用户向服务请求识别身份证，身份证识别包括正面和背面。",
+        "param": [
+          {
+            "param": "detect_direction",
+            "type": "Boolean",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "id_card_side",
+            "type": "String",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "image",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "detect_risk",
+            "type": "Boolean",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "ocrBankCard",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_ocr/#ocrBankCard",
+        "explation": "识别银行卡并返回卡号、发卡行和卡片类型。",
+        "param": [
+          {
+            "param": "image",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "ocrDrivingLicense",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_ocr/#ocrDrivingLicense",
+        "explation": "对机动车驾驶证所有关键字段进行识别。",
+        "param": [
+          {
+            "param": "image",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "detect_direction",
+            "type": "Boolean",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "unified_valid_period",
+            "type": "Boolean",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "ocrVehicleLicense",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_ocr/#ocrVehicleLicense",
+        "explation": "对机动车行驶证正本所有关键字段进行识别。",
+        "param": [
+          {
+            "param": "image",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "detect_direction",
+            "type": "Boolean",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "accuracy",
+            "type": "String",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "textReview",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_text/#textReview",
+        "explation": "运用业界领先的深度学习技术，判断一段文本内容是否符合网络发文规范，实现自动化、智能化的文本审核。",
+        "param": [
+          {
+            "param": "content",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "textToAudio",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_audio/#textToAudio",
+        "explation": "将文本转换为可以播放的mp3文件。",
+        "param": [
+          {
+            "param": "tex",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "ctp",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "lan",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "spd",
+            "type": "String",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "pit",
+            "type": "String",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "vol",
+            "type": "String",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "per",
+            "type": "String",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "imageAudit",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_audit/#imageAudit",
+        "explation": "自定义图像审核。",
+        "param": [
+          {
+            "param": "image",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "imgUrl",
+            "type": "String",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "advancedGeneralIdentify",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_classify/#advancedGeneralIdentify",
+        "explation": "通用物体及场景识别，即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片中的多个物体及场景标签。",
+        "param": [
+          {
+            "param": "image",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "objectDetectIdentify",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_classify/#objectDetectIdentify",
+        "explation": "用户向服务请求检测图像中的主体位置。",
+        "param": [
+          {
+            "param": "image",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "with_face",
+            "type": "Nmuber",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "carClassify",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_classify/#carClassify",
+        "explation": "用于检测一张车辆图片的具体车型，即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片的车辆品牌及型号、颜色及年份、位置信息。",
+        "param": [
+          {
+            "param": "image",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "top_num",
+            "type": "Nmuber",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "dishClassify",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_classify/#dishClassify",
+        "explation": "用于菜品识别，即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片的菜品名称、卡路里信息、置信度。",
+        "param": [
+          {
+            "param": "image",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "top_num",
+            "type": "Nmuber",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "filter_threshold",
+            "type": "Nmuber",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "logoClassify",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_classify/#logoClassify",
+        "explation": "用于检测和识别图片中的品牌 LOGO 信息。即对于输入的一张图片（可正常解码，且长宽比适宜），输出图片中 LOGO 的名称、位置和置信度。 当效果欠佳时，可以建立子库（在控制台创建应用并申请建库）并通过调用 logo 入口接口完成自定义 logo 入库，提高识别效果。",
+        "param": [
+          {
+            "param": "image",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "custom_lib",
+            "type": "Boolean",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "animalClassify",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_classify/#animalClassify",
+        "explation": "该请求用于识别一张图片，即对于输入的一张图片（可正常解码，且长宽比较合适），输出动物识别结果。方法参数：Object",
+        "param": [
+          {
+            "param": "image",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "top_num",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "6"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      },
+      {
+        "name": "plantClassify",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/ai_classify/#plantClassify",
+        "explation": "该请求用于识别一张图片，即对于输入的一张图片（可正常解码，且长宽比较合适），输出植物识别结果。方法参数：Object",
+        "param": [
+          {
+            "param": "image",
+            "type": "String",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "-"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/docs/develop/api/media/",
+    "apis": [
+      {
+        "name": "chooseImage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_image/#previewImage",
+        "explation": "从本地相册选择图片或使用相机拍照。",
+        "param": [
+          {
+            "param": "count",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "最多可以选择的图片张数，默认 9。"
+          },
+          {
+            "param": "sizeType",
+            "type": "String Array",
+            "isRequired": "否",
+            "default": "original 原图，compressed 压缩图，默认二者都有。"
+          },
+          {
+            "param": "sourceType",
+            "type": "String Array",
+            "isRequired": "否",
+            "default": "album 从相册选图，camera 使用相机，默认二者都有。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "是",
+            "default": "成功则返回图片的本地文件路径列表 tempFilePaths。"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "previewImage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_image/#previewImage",
+        "explation": " 预览图片。",
+        "param": [
+          {
+            "param": "current",
+            "type": "String",
+            "isRequired": "否",
+            "default": "当前显示图片的链接，不填则默认为 urls 的第一张。"
+          },
+          {
+            "param": "urls",
+            "type": "String Array",
+            "isRequired": "是",
+            "default": "需要预览的图片链接列表"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getImageInfo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_image/#getImageInfo",
+        "explation": "获取图片信息",
+        "param": [
+          {
+            "param": "src",
+            "type": "String",
+            "isRequired": "是",
+            "default": "图片的路径，可以是相对路径、临时文件路径或存储文件路径,不支持网络图片。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "saveImageToPhotosAlbum",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_image/#saveImageToPhotosAlbum",
+        "explation": " 保存图片到系统相册，需要用户授权。",
+        "param": [
+          {
+            "param": "filePath",
+            "type": "String",
+            "isRequired": "是",
+            "default": "图片文件路径，可以是临时文件路径也可以是永久文件路径，不支持网络图片路径。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getRecorderManager",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_recorder/#getRecorderManager",
+        "explation": " 获取全局唯一的录音管理器recorderManager。"
+      },
+      {
+        "name": "getBackgroundAudioManager",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_backgroundaudiomanager/#getBackgroundAudioManager",
+        "explation": "获取全局唯一的背景音频管理器 backgroundAudioManager。",
+        "param": [
+          {
+            "param": "src",
+            "type": "String",
+            "isRequired": "否",
+            "default": "音频的数据链接，用于直接播放。"
+          },
+          {
+            "param": "startTime",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "开始播放的位置（单位：s），默认 0 。"
+          },
+          {
+            "param": "duration",
+            "type": "Number",
+            "isRequired": "是",
+            "default": "当前音频的长度（单位：s），只有在当前有合法的 src 时返回。"
+          },
+          {
+            "param": "currentTime",
+            "type": "Number",
+            "isRequired": "是",
+            "default": "当前音频的播放位置（单位：s），只有在当前有合法的 src 时返回，时间不取整，保留小数点后 6 位。"
+          },
+          {
+            "param": "paused",
+            "type": "Boolean",
+            "isRequired": "是",
+            "default": "当前是否暂停或停止状态，true 表示暂停或停止，false 表示正在播放。"
+          },
+          {
+            "param": "buffered",
+            "type": "Number",
+            "isRequired": "是",
+            "default": "音频缓冲的时间点，仅保证当前播放时间点到此时间点内容已缓冲。"
+          },
+          {
+            "param": "title",
+            "type": "String",
+            "isRequired": "否",
+            "default": "音频标题，用于做原生音频播放器音频标题。原生音频播放器中的分享功能，分享出去的卡片标题，也将使用该值。"
+          },
+          {
+            "param": "epname",
+            "type": "String",
+            "isRequired": "否",
+            "default": "专辑名，原生音频播放器中的分享功能，分享出去的卡片简介，也将使用该值。"
+          },
+          {
+            "param": "singer",
+            "type": "String",
+            "isRequired": "否",
+            "default": "歌手名，原生音频播放器中的分享功能，分享出去的卡片简介，也将使用该值。"
+          },
+          {
+            "param": "coverImgUrl",
+            "type": "String",
+            "isRequired": "否",
+            "default": "封面图url，用于做原生音频播放器背景图。原生音频播放器中的分享功能，分享出去的卡片配图及背景也将使用该图。"
+          }
+        ]
+      },
+      {
+        "name": "createInnerAudioContext",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_createinneraudiocontext/#createInnerAudioContext",
+        "explation": " 创建并返回内部 audio 上下文 innerAudioContext 对象。",
+        "param": [
+          {
+            "param": "src",
+            "type": "String",
+            "isRequired": "否",
+            "default": "音频的数据链接，用于直接播放。"
+          },
+          {
+            "param": "startTime",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "开始播放的位置（单位：s），默认 0 。"
+          },
+          {
+            "param": "autoplay",
+            "type": "Boolean",
+            "isRequired": "否",
+            "default": "是否自动开始播放，默认 false 。"
+          },
+          {
+            "param": "loop",
+            "type": "Boolean",
+            "isRequired": "否",
+            "default": "是否循环播放，默认 false。"
+          },
+          {
+            "param": "duration",
+            "type": "Number",
+            "isRequired": "是",
+            "default": "当前音频的长度（单位：s），只有在当前有合法的 src 时返回 。"
+          },
+          {
+            "param": "currentTime",
+            "type": "Number",
+            "isRequired": "是",
+            "default": "当前音频的播放位置（单位：s），只有在当前有合法的 src 时返回，时间不取整，保留小数点后 6 位 。"
+          },
+          {
+            "param": "paused",
+            "type": "Boolean",
+            "isRequired": "是",
+            "default": "当前是是否暂停或停止状态，true 表示暂停或停止，false 表示正在播放。"
+          },
+          {
+            "param": "buffered",
+            "type": "Number",
+            "isRequired": "是",
+            "default": "音频缓冲的时间点，仅保证当前播放时间点到此时间点内容已缓冲。"
+          },
+          {
+            "param": "volume",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "音量，范围 0~1。"
+          }
+        ]
+      },
+      {
+        "name": "chooseVideo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_video/#chooseVideo",
+        "explation": " 拍摄视频或从手机相册中选视频，返回视频的临时文件路径。",
+        "param": [
+          {
+            "param": "sourceType",
+            "type": "String Array",
+            "isRequired": "否",
+            "default": "album 从相册选图，camera 使用相机，默认二者都有。"
+          },
+          {
+            "param": "compressed",
+            "type": "Boolean",
+            "isRequired": "否",
+            "default": "是否压缩所选的视频源文件，默认值为true，需要压缩。"
+          },
+          {
+            "param": "maxDuration",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "拍摄视频最长拍摄时间，（单位：s）。最长支持 60 秒。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "是",
+            "default": "接口调用成功，返回视频文件的临时文件路径，详见返回参数说明。"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "saveVideoToPhotosAlbum",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_video/#saveVideoToPhotosAlbum",
+        "explation": " 保存视频到系统相册。需要用户授权。",
+        "param": [
+          {
+            "param": "filePath",
+            "type": "String",
+            "isRequired": "是",
+            "default": "视频文件路径，可以是临时文件路径也可以是永久文件路径。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "createVideoContext",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_videocontext/#createVideoContext",
+        "explation": " 创建并返回 video 上下文 videoContext 对象。通过 videoId 跟一个 video 组件绑定，通过它可以操作一个 video 组件。"
+      },
+      {
+        "name": "createLivePlayerContext",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_liveplayercontext/#createLivePlayerContext",
+        "explation": " 操作对应的 <live-player/> 组件。 创建并返回 live-player 上下文 LivePlayerContext 对象。"
+      },
+      {
+        "name": "createCameraContext",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/media_cameracontext/#createCameraContext",
+        "explation": "创建并返回 camera 上下文 cameraContext对象，cameraContext 与页面的 camera 组件绑定，一个页面只能有一个 camera，通过它可以操作对应的组件。"
+      }
+    ]
+  },
+  {
+    "name": "/docs/develop/api/file/",
+    "apis": [
+      {
+        "name": "saveFile",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/file_save/#saveFile",
+        "explation": "保存文件到本地",
+        "param": [
+          {
+            "param": "tempFilePath",
+            "type": "String",
+            "isRequired": "是",
+            "default": "需要保存的文件的临时路径"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "返回文件的保存路径，res = {savedFilePath: ‘文件的保存路径’}。"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getFileInfo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/file_save/#getFileInfo",
+        "explation": "获取文件信息",
+        "param": [
+          {
+            "param": "filePath",
+            "type": "String",
+            "isRequired": "是",
+            "default": "本地文件路径"
+          },
+          {
+            "param": "digestAlgorithm",
+            "type": "String",
+            "isRequired": "否",
+            "default": "计算文件摘要的算法，默认值 md5，有效值：md5，sha1。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getSavedFileList",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/file_save/#getSavedFileList",
+        "explation": "获取本地已保存的文件列表参数：Object",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数，返回结果见success返回参数说明。"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getSavedFileInfo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/file_save/#getSavedFileInfo",
+        "explation": "获取本地文件的文件信息。此接口只能用于获取已保存到本地的文件，若需要获取临时文件信息，请使用 getFileInfo 接口。",
+        "param": [
+          {
+            "param": "filePath",
+            "type": "String",
+            "isRequired": "是",
+            "default": "文件路径"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数，返回结果见 success 返回参数说明。"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "removeSavedFile",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/file_remove/#removeSavedFile",
+        "explation": "删除本地存储的文件",
+        "param": [
+          {
+            "param": "filePath",
+            "type": "String",
+            "isRequired": "是",
+            "default": "需要删除的文件路径"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "openDocument",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/file_open/#openDocument",
+        "explation": "新开页面打开文档，支持格式：doc, xls, ppt, pdf, docx, xlsx, pptx。",
+        "param": [
+          {
+            "param": "filePath",
+            "type": "String",
+            "isRequired": "是",
+            "default": "文件路径，可通过 downloadFile 获得"
+          },
+          {
+            "param": "fileType",
+            "type": "String",
+            "isRequired": "否",
+            "default": "文件类型，指定文件类型打开文件，有效值 doc, xls, ppt, pdf, docx, xlsx, pptx。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/docs/develop/api/storage/",
+    "apis": [
+      {
+        "name": "setStorage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#setStorage",
+        "explation": "将数据存储在本地缓存指定的 key 中。如果之前存在同名 key ，会覆盖掉原来该 key 对应的内容。这是一个异步接口。",
+        "param": [
+          {
+            "param": "key",
+            "type": "String",
+            "isRequired": "是",
+            "default": "本地缓存中的指定的 key"
+          },
+          {
+            "param": "data",
+            "type": "Object/String",
+            "isRequired": "是",
+            "default": "需要存储的内容"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "setStorageSync",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#setStorageSync",
+        "explation": "将数据存储在本地缓存中指定的 key 中。如果之前存在同名 key ，会覆盖掉原来该 key 对应的内容。这是一个同步接口。",
+        "param": [
+          {
+            "param": "key",
+            "type": "String",
+            "isRequired": "是",
+            "default": "本地缓存中的指定的 key"
+          },
+          {
+            "param": "data",
+            "type": "Object/String",
+            "isRequired": "是",
+            "default": "需要存储的内容"
+          }
+        ]
+      },
+      {
+        "name": "getStorage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorage",
+        "explation": "从本地缓存中异步获取指定 key 对应的内容。",
+        "param": [
+          {
+            "param": "key",
+            "type": "String",
+            "isRequired": "是",
+            "default": "本地缓存中的指定的 key"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "是",
+            "default": "接口调用成功的回调函数，res = {data: key对应的内容}。"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getStorageSync",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorageSync",
+        "explation": "从本地缓存中同步获取指定 key 对应的内容。",
+        "param": [
+          {
+            "param": "key",
+            "type": "String",
+            "isRequired": "是",
+            "default": "本地缓存中的指定的 key"
+          }
+        ]
+      },
+      {
+        "name": "getStorageInfo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorageInfo",
+        "explation": "异步获取当前 storage 的相关信息。",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "是",
+            "default": "接口调用成功的回调函数，详见返回参数说明。"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getStorageInfoSync",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_save/#getStorageInfoSync",
+        "explation": "同步获取当前 storage 的相关信息。"
+      },
+      {
+        "name": "removeStorage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_remove/#removeStorage",
+        "explation": "从本地缓存中异步移除指定 key。",
+        "param": [
+          {
+            "param": "key",
+            "type": "String",
+            "isRequired": "是",
+            "default": "本地缓存中的指定的 key"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "是",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "removeStorageSync",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_remove/#removeStorageSync",
+        "explation": "从本地缓存中同步移除指定 key。",
+        "param": [
+          {
+            "param": "key",
+            "type": "String",
+            "isRequired": "是",
+            "default": "本地缓存中的指定的 key"
+          }
+        ]
+      },
+      {
+        "name": "clearStorage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_remove/#clearStorage",
+        "explation": " 清理本地数据缓存。  ",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "是",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "clearStorageSync",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/storage_remove/#clearStorageSync",
+        "explation": "同步清理本地数据缓存。"
+      }
+    ]
+  },
+  {
+    "name": "/docs/develop/api/location/",
+    "apis": [
+      {
+        "name": "getLocation",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/location_get/#getLocation",
+        "explation": " 获取当前的地理位置、速度。当用户离开智能小程序后，此接口无法调用。",
+        "param": [
+          {
+            "param": "type",
+            "type": "String",
+            "isRequired": "否",
+            "default": "默认为 wgs84 返回 gps 坐标，可选 gcj02 。"
+          },
+          {
+            "param": "altitude",
+            "type": "Boolean",
+            "isRequired": "否",
+            "default": "传入 true 会返回高度信息，获取高度需要较高精度且需要打开 gps ，会很耗时，默认没有用 gps。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "是",
+            "default": "接口调用成功的回调函数，返回内容详见返回参数说明。"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "chooseLocation",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/location_get/#chooseLocation",
+        "explation": " 打开地图选择位置。需要用户授权 scope.userLocation。",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "openLocation",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/location_open/#openLocation",
+        "explation": "使用百度 App 内置地图查看位置。",
+        "param": [
+          {
+            "param": "latitude",
+            "type": "Float",
+            "isRequired": "是",
+            "default": "纬度，范围为 -90~90，负数表示南纬。"
+          },
+          {
+            "param": "longitude",
+            "type": "Float",
+            "isRequired": "是",
+            "default": "经度，范围为 -180~180，负数表示西经。"
+          },
+          {
+            "param": "scale",
+            "type": "INT",
+            "isRequired": "否",
+            "default": "缩放比例，范围 4~21，默认为16。"
+          },
+          {
+            "param": "name",
+            "type": "String",
+            "isRequired": "否",
+            "default": "位置名"
+          },
+          {
+            "param": "address",
+            "type": "String",
+            "isRequired": "否",
+            "default": "地址的详细说明"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "createMapContext",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/location_map/#createMapContext",
+        "explation": "创建并返回 map 上下文 mapContext 对象。在自定义组件下，第二个参数传入组件实例 this，以操作组件内 <map/> 组件。mapContext 通过 mapId 跟一个  组件绑定，通过它可以操作对应的  组件。"
+      }
+    ]
+  },
+  {
+    "name": "/docs/develop/api/show/",
+    "apis": [
+      {
+        "name": "createCanvasContext",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#createCanvasContext",
+        "explation": "在 Page 中，推荐使用this.createCanvasContext(canvasId)，进行绘图上下文的创建。"
+      },
+      {
+        "name": "canvasToTempFilePath(OBJECT, this)",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasToTempFilePath-OBJECT-this",
+        "explation": "把当前画布指定区域的内容导出生成指定大小的图片，并返回文件路径。在自定义组件下，第二个参数传入组件实例this，以操作组件内<canvas/>组件。",
+        "param": [
+          {
+            "param": "x",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "画布 x 轴起点（默认 0 ）"
+          },
+          {
+            "param": "y",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "画布 y 轴起点（默认 0 ）"
+          },
+          {
+            "param": "width",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "画布宽度（默认为 canvas 宽度 -x）"
+          },
+          {
+            "param": "height",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "画布高度（默认为 canvas 高度 -y）"
+          },
+          {
+            "param": "destWidth",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "输出图片宽度（默认为 width * 屏幕像素密度）"
+          },
+          {
+            "param": "destHeight",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "输出图片高度（默认为 height * 屏幕像素密度）"
+          },
+          {
+            "param": "canvasId",
+            "type": "String",
+            "isRequired": "是",
+            "default": "画布标识，传入<canvas/>的 canvas-id"
+          },
+          {
+            "param": "fileType",
+            "type": "String",
+            "isRequired": "否",
+            "default": "目标文件的类型，只支持 ‘jpg’ 或 ‘png’，默认为 ‘png’ 。"
+          },
+          {
+            "param": "quality",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "图片的质量，取值范围为 (0, 1]，不在范围内时当作 1.0 处理 。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "canvasContext.setFillStyle",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setFillStyle",
+        "explation": "设置填充色。",
+        "param": [
+          {
+            "param": "color",
+            "type": "Color",
+            "isRequired": "是",
+            "default": "设置的填充颜色"
+          }
+        ]
+      },
+      {
+        "name": "canvasContext.setStrokeStyle",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setStrokeStyle",
+        "explation": "设置边框颜色。",
+        "param": [
+          {
+            "param": "color",
+            "type": "Color",
+            "isRequired": "是",
+            "default": "设置的边框颜色"
+          }
+        ]
+      },
+      {
+        "name": "canvasContext.setShadow",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setShadow",
+        "explation": "设置阴影样式。"
+      },
+      {
+        "name": "canvasContext.createLinearGradient",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-createLinearGradient",
+        "explation": "创建一个线性的渐变颜色。"
+      },
+      {
+        "name": "canvasContext.createCircularGradient",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-createCircularGradient",
+        "explation": "创建一个圆形的渐变颜色。"
+      },
+      {
+        "name": "canvasContext.addColorStop",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-addColorStop",
+        "explation": "创建一个颜色的渐变点。"
+      },
+      {
+        "name": "canvasContext.setLineWidth",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setLineWidth",
+        "explation": "设置线条的宽度。"
+      },
+      {
+        "name": "canvasContext.setLineCap",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setLineCap",
+        "explation": "设置线条的端点样式。"
+      },
+      {
+        "name": "canvasContext.setLineJoin",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setLineJoin",
+        "explation": "设置线条的交点样式。"
+      },
+      {
+        "name": "canvasContext.setLineDash",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setLineDash",
+        "explation": "设置线条的宽度。"
+      },
+      {
+        "name": "canvasContext.setMiterLimit",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setMiterLimit",
+        "explation": "设置最大斜接长度，斜接长度指的是在两条线交汇处内角和外角之间的距离，当 setLineJoin() 为 miter 时才有效，超过最大倾斜长度的，连接处将以 lineJoin 为 bevel 来显示。"
+      },
+      {
+        "name": "canvasContext.rec",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-rect",
+        "explation": ""
+      },
+      {
+        "name": "canvasContext.fillRect",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-fillRect",
+        "explation": "填充一个矩形。"
+      },
+      {
+        "name": "canvasContext.strokeRect",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-strokeRect",
+        "explation": "画一个矩形(非填充)。"
+      },
+      {
+        "name": "canvasContext.clearRect",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-clearRect",
+        "explation": "清除画布上在该矩形区域内的内容。"
+      },
+      {
+        "name": "canvasContext.fill",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-fill",
+        "explation": "对当前路径中的内容进行填充。默认的填充色为黑色。"
+      },
+      {
+        "name": "canvasContext.stroke",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-stroke",
+        "explation": "画出当前路径的边框。默认颜色为黑色。"
+      },
+      {
+        "name": "canvasContext.beginPath",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-beginPath",
+        "explation": "开始创建一个路径，需要调用 fill 或者 stroke 才会使用路径进行填充或描边。"
+      },
+      {
+        "name": "canvasContext.closePath",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-closePath",
+        "explation": "关闭一个路径。"
+      },
+      {
+        "name": "canvasContext.moveTo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-moveTo",
+        "explation": "把路径移动到画布中的指定点，不创建线条。"
+      },
+      {
+        "name": "canvasContext.lineTo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-lineTo",
+        "explation": "lineTo 方法增加一个新点，然后创建一条从上次指定点到目标点的线。"
+      },
+      {
+        "name": "canvasContext.arc",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-arc",
+        "explation": "画一条弧线。"
+      },
+      {
+        "name": "canvasContext.scale",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-scale",
+        "explation": "在调用scale方法后，之后创建的路径其横纵坐标会被缩放。多次调用scale，倍数会相乘。"
+      },
+      {
+        "name": "canvasContext.rotate",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-rotate",
+        "explation": "以原点为中心，原点可以用 translate 方法修改。顺时针旋转当前坐标轴。多次调用 rotate，旋转的角度会叠加。"
+      },
+      {
+        "name": "canvasContext.translate",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-translate",
+        "explation": "对当前坐标系的原点 (0, 0) 进行变换，默认的坐标系原点为页面左上角。"
+      },
+      {
+        "name": "canvasContext.clip",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-clip",
+        "explation": " clip() 方法从原始画布中剪切任意形状和尺寸。一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内（不能访问画布上的其他区域）。可以在使用 clip() 方法前通过使用 save() 方法对当前画布区域进行保存，并在以后的任意时间对其进行恢复（通过 “restore()” 方法）。"
+      },
+      {
+        "name": "canvasContext.setFontSize",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setFontSize",
+        "explation": "设置字体的字号。"
+      },
+      {
+        "name": "canvasContext.fillText",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-fillText",
+        "explation": "在画布上绘制被填充的文本。"
+      },
+      {
+        "name": "canvasContext.setTextAlign",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setTextAlign",
+        "explation": "用于设置文字的对齐。"
+      },
+      {
+        "name": "canvasContext.setTextBaseline",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setTextBaseline",
+        "explation": "用于设置文字的水平对齐。"
+      },
+      {
+        "name": "canvasContext.drawImage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-drawImage",
+        "explation": "绘制图像到画布。"
+      },
+      {
+        "name": "canvasContext.setGlobalAlph",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setGlobalAlpha",
+        "explation": ""
+      },
+      {
+        "name": "canvasContext.measureText",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-measureText",
+        "explation": "测量文本尺寸信息，目前仅返回文本宽度。同步接口。"
+      },
+      {
+        "name": "canvasContext.arcTo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-arcTo",
+        "explation": "根据控制点和半径绘制圆弧路径。"
+      },
+      {
+        "name": "canvasContext.strokeText",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-strokeText",
+        "explation": "给定的 (x, y) 位置绘制文本描边的方法。"
+      },
+      {
+        "name": "canvasContext.setLineDashOffset",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setLineDashOffset",
+        "explation": "设置虚线偏移量的属性。"
+      },
+      {
+        "name": "canvasContext.createPattern",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-createPattern",
+        "explation": "对指定的图像创建模式的方法，可在指定的方向上重复元图像。"
+      },
+      {
+        "name": "canvasContext.bezierCurveTo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-bezierCurveTo",
+        "explation": "创建三次方贝塞尔曲线路径。"
+      },
+      {
+        "name": "canvasContext.quadraticCurveTo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-quadraticCurveTo",
+        "explation": "创建二次贝塞尔曲线路径。"
+      },
+      {
+        "name": "canvasContext.save",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-save",
+        "explation": "保存当前的绘图上下文。"
+      },
+      {
+        "name": "canvasContext.restore",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-restore",
+        "explation": "恢复之前保存的绘图上下文。"
+      },
+      {
+        "name": "canvasContext.draw",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-draw",
+        "explation": "将之前在绘图上下文中的描述（路径、变形、样式）画到 canvas 中。"
+      },
+      {
+        "name": "canvasContext.font",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-font",
+        "explation": "设置当前字体样式的属性。"
+      },
+      {
+        "name": "canvasContext.setTransform",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_canvas/#canvasContext-setTransform",
+        "explation": "使用矩阵重新设置（覆盖）当前变换的方法。"
+      },
+      {
+        "name": "showToast",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_toast/#showToast",
+        "explation": "显示消息提示框",
+        "param": [
+          {
+            "param": "title",
+            "type": "String",
+            "isRequired": "是",
+            "default": "提示的内容"
+          },
+          {
+            "param": "icon",
+            "type": "String",
+            "isRequired": "否",
+            "default": "图标，有效值 “success”、“loading”、“none”, 默认“none” 。"
+          },
+          {
+            "param": "duration",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "提示的延迟时间，单位毫秒，默认：1500。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          },
+          {
+            "param": "mask",
+            "type": "Boolean",
+            "isRequired": "否",
+            "default": "是否显示透明蒙层，防止触摸穿透，默认：false。"
+          }
+        ]
+      },
+      {
+        "name": "showLoading",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_toast/#showLoading",
+        "explation": "显示 loading 提示框, 需主动调用 hideLoading 才能关闭提示框。",
+        "param": [
+          {
+            "param": "title",
+            "type": "String",
+            "isRequired": "是",
+            "default": "提示的内容"
+          },
+          {
+            "param": "mask",
+            "type": "String",
+            "isRequired": "否",
+            "default": "是否显示透明蒙层，防止触摸穿透，默认：false。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "hideLoading",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_toast/#hideToast",
+        "explation": "隐藏 loading 提示框"
+      },
+      {
+        "name": "showModal",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_toast/#showModal",
+        "explation": "显示模态弹窗",
+        "param": [
+          {
+            "param": "title",
+            "type": "String",
+            "isRequired": "是",
+            "default": "提示的标题"
+          },
+          {
+            "param": "content",
+            "type": "String",
+            "isRequired": "是",
+            "default": "提示的内容"
+          },
+          {
+            "param": "showCancel",
+            "type": "Boolean",
+            "isRequired": "否",
+            "default": "是否显示取消按钮，默认为 true。"
+          },
+          {
+            "param": "cancelText",
+            "type": "String",
+            "isRequired": "否",
+            "default": "取消按钮的文字，默认为“取消”，最多 4 个字符。"
+          },
+          {
+            "param": "cancelColor",
+            "type": "HexColor",
+            "isRequired": "否",
+            "default": "取消按钮的文字颜色，默认为 “#000000”。"
+          },
+          {
+            "param": "confirmText",
+            "type": "String",
+            "isRequired": "否",
+            "default": "确定按钮的文字，默认为“确定”，最多 4 个字符。"
+          },
+          {
+            "param": "confirmColor",
+            "type": "HexColor",
+            "isRequired": "否",
+            "default": "确定按钮的文字颜色，默认颜色为“#3c76ff”。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "showActionSheet",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_toast/#showActionSheet",
+        "explation": "​显示操作菜单",
+        "param": [
+          {
+            "param": "itemList",
+            "type": "String Array",
+            "isRequired": "是",
+            "default": "按钮的文字数组，数组长度最大为6个。"
+          },
+          {
+            "param": "itemColor",
+            "type": "HexColor",
+            "isRequired": "否",
+            "default": "按钮的文字颜色，默认颜色为“#3c76ff”。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数，详见返回参数说明。"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "setNavigationBarTitle",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#setNavigationBarTitle",
+        "explation": "动态设置当前页面的标题。",
+        "param": [
+          {
+            "param": "title",
+            "type": "String",
+            "isRequired": "是",
+            "default": "页面标题"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "showNavigationBarLoading",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#showNavigationBarLoading",
+        "explation": " 该方法在当前页面显示导航条加载动画。"
+      },
+      {
+        "name": "hideNavigationBarLoading",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#hideNavigationBarLoading",
+        "explation": " 隐藏导航条加载动画。"
+      },
+      {
+        "name": "setNavigationBarColor",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_navigationbar/#setNavigationBarColor",
+        "explation": "动态设置当前页面导航条的颜色。",
+        "param": [
+          {
+            "param": "frontColor",
+            "type": "String",
+            "isRequired": "是",
+            "default": "前景颜色值，包括按钮、标题、状态栏的颜色，仅支持 #ffffff 和 #000000。"
+          },
+          {
+            "param": "backgroundColor",
+            "type": "String",
+            "isRequired": "是",
+            "default": "背景颜色值，有效值为十六进制颜色。"
+          },
+          {
+            "param": "animation",
+            "type": "Object",
+            "isRequired": "否",
+            "default": "动画效果"
+          },
+          {
+            "param": "animation.duration",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "动画变化时间，默认0，单位：毫秒。"
+          },
+          {
+            "param": "animation.timingFunc",
+            "type": "String",
+            "isRequired": "否",
+            "default": "动画变化方式，默认 linear"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "setTabBarBadge",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#setTabBarBadge",
+        "explation": "为 tabBar 某一项的右上角添加文本",
+        "param": [
+          {
+            "param": "index",
+            "type": "Number",
+            "isRequired": "是",
+            "default": "tabBar的哪一项，从左边算起"
+          },
+          {
+            "param": "text",
+            "type": "String",
+            "isRequired": "是",
+            "default": "显示的文本，超过 4 个字符则显示成“…”"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "removeTabBarBadge",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#removeTabBarBadge",
+        "explation": "移除tabBar某一项右上角的文本。",
+        "param": [
+          {
+            "param": "index",
+            "type": "Number",
+            "isRequired": "是",
+            "default": "tabBar的哪一项，从左边算起"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "showTabBarRedDot",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#showTabBarRedDot",
+        "explation": "显示 tabBar 某一项的右上角的红点",
+        "param": [
+          {
+            "param": "index",
+            "type": "Number",
+            "isRequired": "是",
+            "default": "tabBar的哪一项，从左边算起"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "hideTabBarRedDot",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#hideTabBarRedDot",
+        "explation": "隐藏 tabBar 某一项的右上角的红点",
+        "param": [
+          {
+            "param": "index",
+            "type": "Number",
+            "isRequired": "是",
+            "default": "tabBar的哪一项，从左边算起"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "setTabBarStyle",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#setTabBarStyle",
+        "explation": "动态设置 tabBar 的整体样式",
+        "param": [
+          {
+            "param": "color",
+            "type": "HexColor",
+            "isRequired": "是",
+            "default": "tab 上的文字默认颜色"
+          },
+          {
+            "param": "selectedColor",
+            "type": "HexColor",
+            "isRequired": "是",
+            "default": "tab 上的文字选中时的颜色"
+          },
+          {
+            "param": "backgroundColor",
+            "type": "HexColor",
+            "isRequired": "是",
+            "default": "tab 的背景色"
+          },
+          {
+            "param": "borderStyle",
+            "type": "String",
+            "isRequired": "是",
+            "default": "tabbar上边框的颜色， 仅支持 black/white"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "setTabBarItem",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#setTabBarItem",
+        "explation": "动态设置 tabBar 某一项的内容",
+        "param": [
+          {
+            "param": "index",
+            "type": "Number",
+            "isRequired": "是",
+            "default": "tabBar的哪一项，从左边算起"
+          },
+          {
+            "param": "text",
+            "type": "String",
+            "isRequired": "是",
+            "default": "tab 上按钮文字"
+          },
+          {
+            "param": "iconPath",
+            "type": "String",
+            "isRequired": "是",
+            "default": "图片绝对路径，icon 大小限制为 40KB，建议尺寸为 81px * 81px，当 postion 为 top 时，此参数无效，不支持网络图片"
+          },
+          {
+            "param": "selectedIconPath",
+            "type": "String",
+            "isRequired": "是",
+            "default": "选中时的图片的绝对路径，icon 大小限制为 40KB，建议尺寸为 81px * 81px ，当position为 top 时，此参数无效"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "showTabBar",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#showTabBar",
+        "explation": "显示 tabBar",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "hideTabBar",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_tabBar/#hideTabBar",
+        "explation": "隐藏 tabBar",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "navigateTo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_tab/#navigateTo",
+        "explation": "保留当前页面，跳转到应用内的某个页面，使用 swan.navigateBack 可以返回到原页面。",
+        "param": [
+          {
+            "param": "url",
+            "type": "String",
+            "isRequired": "是",
+            "default": "需要跳转的应用内非 tabBar 的页面的路径 , 路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 ‘path?key=value&key2=value2’。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "redirectTo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_tab/#redirectTo",
+        "explation": "关闭当前页面，跳转到应用内的某个页面。",
+        "param": [
+          {
+            "param": "url",
+            "type": "String",
+            "isRequired": "是",
+            "default": "需要跳转的应用内非 tabBar 的页面的路径，路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 ‘path?key=value&key2=value2’。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "switchTab",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_tab/#switchTab",
+        "explation": "跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面。",
+        "param": [
+          {
+            "param": "url",
+            "type": "String",
+            "isRequired": "是",
+            "default": "需要跳转的 tabBar 页面的路径（需在 app.json 的 tabBar 字段定义的页面），路径后不能带参数。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "navigateBack",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_tab/#navigateBack",
+        "explation": "关闭当前页面，返回上一页面或多级页面。",
+        "param": [
+          {
+            "param": "delta",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "返回的页面数，如果 delta 大于现有页面数，则返回到首页，默认为 1。"
+          }
+        ]
+      },
+      {
+        "name": "reLaunch",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_tab/#reLaunch",
+        "explation": "关闭所有页面，打开到应用内的某个页面。",
+        "param": [
+          {
+            "param": "url",
+            "type": "String",
+            "isRequired": "是",
+            "default": "需要跳转的应用内页面路径 , 路径后可以带参数。参数与路径之间使用 ? 分隔，参数键与参数值用=相连，不同参数用 & 分隔；如 ‘path?key=value&key2=value2’，如果跳转的页面路径是 tabBar 页面则不能带参数。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "createAnimation",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_createAnimation/#createAnimation",
+        "explation": "创建一个动画实例 animation",
+        "param": [
+          {
+            "param": "duration",
+            "type": "Integer",
+            "isRequired": "否",
+            "default": "400"
+          },
+          {
+            "param": "timingFunction",
+            "type": "String",
+            "isRequired": "否",
+            "default": "‘linear’"
+          },
+          {
+            "param": "delay",
+            "type": "Integer",
+            "isRequired": "否",
+            "default": "0"
+          },
+          {
+            "param": "transformOrigin",
+            "type": "String",
+            "isRequired": "否",
+            "default": "‘50% 50% 0’"
+          }
+        ]
+      },
+      {
+        "name": "pageScrollTo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_pagescrollto/#pageScrollTo",
+        "explation": "将页面滚动到目标位置（可以设置滚动动画时长）。",
+        "param": [
+          {
+            "param": "scrollTop",
+            "type": "Number",
+            "isRequired": "是",
+            "default": "-"
+          },
+          {
+            "param": "duration",
+            "type": "Number",
+            "isRequired": "否",
+            "default": "300"
+          }
+        ]
+      },
+      {
+        "name": "onPullDownRefresh",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_pull/#onPullDownRefresh",
+        "explation": "在 Page 中定义 onPullDownRefresh 处理函数，监听该页面用户下拉刷新事件。"
+      },
+      {
+        "name": "startPullDownRefresh",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_pull/#startPullDownRefresh",
+        "explation": "开始下拉刷新，调用后触发下拉刷新动画，效果与用户手动下拉刷新一致。",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "stopPullDownRefresh",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_pull/#stopPullDownRefresh",
+        "explation": " 停止当前页面下拉刷新。"
+      },
+      {
+        "name": "createSelectorQuery",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_query/#createSelectorQuery",
+        "explation": " 返回一个 SelectorQuery 对象实例。可以在这个实例上使用 select 等方法选择节点，并使用 boundingClientRect 等方法选择需要查询的信息。"
+      },
+      {
+        "name": "selectorQuery.in(component)",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_query/#selectorQuery-in-component",
+        "explation": " 将选择器的选取范围更改为自定义组件 component 内（初始时，选择器仅选取页面范围的节点，不会选取任何自定义组件中的节点）。"
+      },
+      {
+        "name": "selectorQuery.select(selector)",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_query/#selectorQuery-select-selector",
+        "explation": " 在当前页面下选择第一个匹配选择器 selector 的节点，返回一个 NodesRef 对象实例，可以用于获取节点信息。"
+      },
+      {
+        "name": "selectorQuery.selectAll(selector)",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_query/#selectorQuery-selectAll-selector",
+        "explation": " 在当前页面下选择匹配选择器 selector 的节点，返回一个 NodesRef 对象实例。 与 selectorQuery.select(selector) 不同的是，它选择所有匹配选择器的节点。"
+      },
+      {
+        "name": "selectorQuery.selectViewport()",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_query/#selectorQuery-selectViewport",
+        "explation": " 选择显示区域，可用于获取显示区域的尺寸、滚动位置等信息，返回一个NodesRef对象实例。"
+      },
+      {
+        "name": "nodesRef.boundingClientRect([callback])",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_query/#nodesRef-boundingClientRect-callback",
+        "explation": " 添加节点的布局位置的查询请求，相对于显示区域，以像素为单位。其功能类似于 DOM 的 getBoundingClientRect。返回值是 nodesRef 对应的 selectorQuery。"
+      },
+      {
+        "name": "nodesRef.scrollOffset([callback])",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_query/#nodesRef-scrollOffset-callback",
+        "explation": " 添加节点的滚动位置查询请求，以像素为单位。节点必须是 scroll-view 或者 viewport 。返回值是 nodesRef 对应的 selectorQuery 。"
+      },
+      {
+        "name": "nodesRef.fields(fields,[callback])",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_query/#nodesRef-fields-fields-callback",
+        "explation": " 获取节点的相关信息，需要获取的字段在 fields 中指定。返回值是 nodesRef 对应的 selectorQuery 。可指定获取的字段包括："
+      },
+      {
+        "name": "selectorQuery.exec([callback])",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/show_query/#selectorQuery-exec-callback",
+        "explation": " 执行所有的请求，请求结果按请求次序构成数组，在 callback 的第一个参数中返回。"
+      }
+    ]
+  },
+  {
+    "name": "/docs/develop/api/device/",
+    "apis": [
+      {
+        "name": "getSystemInfo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_sys/#getSystemInfo",
+        "explation": "获取系统信息",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "是",
+            "default": "接口调用成功的回调"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getSystemInfoSync",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_sys/#getSystemInfoSync",
+        "explation": "获取系统信息同步接口"
+      },
+      {
+        "name": "canIUse",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_sys/#canIUse",
+        "explation": " 判断智能小程序的API，回调，参数，组件等是否在当前版本可用。"
+      },
+      {
+        "name": "onMemoryWarning",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_onmemory/#onMemoryWarning",
+        "explation": "监听内存不足的告警事件，Android 下有告警等级划分，只有 LOW 和 CRITICAL 会回调开发者；iOS 无等级划分。"
+      },
+      {
+        "name": "getNetworkType",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_network/#getNetworkType",
+        "explation": "获取网络类型",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "是",
+            "default": "接口调用成功，返回网络类型 networkType"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "onNetworkStatusChange",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_network/#onNetworkStatusChange",
+        "explation": "监听网络状态变化。"
+      },
+      {
+        "name": "onAccelerometerChange",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_accelerometer/#onAccelerometerChange",
+        "explation": "监听加速度数据，频率：5次/秒，接口调用后会自动开始监听，可使用 swan.stopAccelerometer 停止监听。参数：CALLBACK"
+      },
+      {
+        "name": "startAccelerometer",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_accelerometer/#startAccelerometer",
+        "explation": "开始监听加速度数据。参数：Object",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "stopAccelerometer",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_accelerometer/#stopAccelerometer",
+        "explation": "停止监听加速度数据。参数：Object",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "onCompassChange",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_compass/#onCompassChange",
+        "explation": "监听罗盘数据，频率：5次/秒，接口调用后会自动开始监听，可使用swan.stopCompass停止监听。参数：CALLBACK"
+      },
+      {
+        "name": "startCompass",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_compass/#startCompass",
+        "explation": "开始监听罗盘数据。参数：Object",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "stopCompass",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_compass/#stopCompass",
+        "explation": "停止监听罗盘数据。参数：Object",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "scanCode",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_scan/#scanCode",
+        "explation": "调起客户端扫码界面，扫码成功后返回对应的结果。参数：Object",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "setScreenBrightness",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_screen/#setScreenBrightness",
+        "explation": "设置屏幕亮度。参数：Object",
+        "param": [
+          {
+            "param": "value",
+            "type": "Number",
+            "isRequired": "是",
+            "default": "屏幕亮度值，范围 0~1，0 最暗，1 最亮。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getScreenBrightness",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_screen/#getScreenBrightness",
+        "explation": "获取屏幕亮度。参数：Object",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "setKeepScreenOn",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_screen/#setKeepScreenOn",
+        "explation": "设置是否保持常亮状态。仅在当前智能小程序生效，离开智能小程序后设置失效。参数：Object",
+        "param": [
+          {
+            "param": "keepScreenOn",
+            "type": "Boolean",
+            "isRequired": "是",
+            "default": "是否保持屏幕常亮"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "onUserCaptureScreen",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_capture/#onUserCaptureScreen",
+        "explation": "监听用户主动截屏事件，用户使用系统截屏按键截屏时触发此事件。参数：CALLBACK"
+      },
+      {
+        "name": "vibrateLong",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_vibrate/#vibrateLong",
+        "explation": " 使手机发生较长时间的振动（400ms）参数： Object",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "vibrateShort",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_vibrate/#vibrateShort",
+        "explation": "使手机发生较短时间的振动（15ms）",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "addPhoneContact",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_call/#addPhoneContact",
+        "explation": ""
+      },
+      {
+        "name": "makePhoneCall",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_call/#makePhoneCall",
+        "explation": "拨打电话参数：Object",
+        "param": [
+          {
+            "param": "phoneNumber",
+            "type": "String",
+            "isRequired": "是",
+            "default": "需要拨打的电话号码"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "setClipboardData",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_clipboard/#setClipboardData",
+        "explation": "设置系统剪贴板的内容",
+        "param": [
+          {
+            "param": "data",
+            "type": "String",
+            "isRequired": "是",
+            "default": "需要设置的内容"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getClipboardData",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/device_clipboard/#getClipboardData",
+        "explation": "获取系统剪贴板内容",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "/docs/develop/api/ext/",
+    "apis": [
+      {
+        "name": "getExtConfig",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/getextconfig/#getExtConfig",
+        "explation": "获取第三方平台自定义的数据字段。",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "返回第三方平台自定义的数据11"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getExtConfigSync",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/getextconfig/#getExtConfigSync",
+        "explation": " 获取第三方平台自定义的数据字段的同步接口。"
+      }
+    ]
+  },
+  {
+    "name": "/docs/develop/api/open/",
+    "apis": [
+      {
+        "name": "login",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_login/#login",
+        "explation": " 调用接口 swan.login 获取 临时登录凭证（code）",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "checkSession",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_login/#checkSession",
+        "explation": " 通过上述接口获得的用户登录态拥有一定的时效性，用户越久未使用智能小程序，用户登录态越有可能失效；反之如果用户一直在使用智能小程序，则用户登录态一直保持有效。具体时效逻辑由百度 App 维护，对开发者透明。开发者可以调用 swan.checkSession 接口 检测当前用户登录态是否有效，登录态过期后开发者可以再调用 swan.login 获取新的用户登录态。",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "authorize",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_authorize/#authorize",
+        "explation": " 提前向用户发起授权请求。调用后会立刻弹窗询问用户是否同意授权智能小程序使用某项功能或获取用户的某些数据，但不会实际调用对应接口。如果用户之前已经同意授权，则不会出现弹窗，直接返回成功。",
+        "param": [
+          {
+            "param": "scope",
+            "type": "String",
+            "isRequired": "是",
+            "default": "需要获取权限的 scope，详见 scope 列表。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getSwanId",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#getSwanId",
+        "explation": "获取 swanid。",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getUserInfo",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#getUserInfo",
+        "explation": "获取用户信息",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "openSetting",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_setting/#openSetting",
+        "explation": " 调起客户端智能小程序设置界面，返回用户设置的操作结果。",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "getSetting",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_setting/#getSetting",
+        "explation": " 获取用户的当前设置",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "onShareAppMessage",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_share/#onShareAppMessage",
+        "explation": " 在 Page 中定义 onShareAppMessage 函数，设置该页面的分享信息。"
+      },
+      {
+        "name": "chooseAddress",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_chooseaddress/#chooseAddress",
+        "explation": " 调起用户编辑收货地址原生界面，并在编辑完成后返回用户选择的地址，需要用户授权 scope.address。",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "返回用户选择的收货地址信息"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "requestPolymerPayment",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment",
+        "explation": " swanjs 1.8.5 版本开始支持。",
+        "param": [
+          {
+            "param": "orderInfo",
+            "type": "Object",
+            "isRequired": "是",
+            "default": "订单信息"
+          },
+          {
+            "param": "bannedChannels",
+            "type": "StringArray",
+            "isRequired": "否",
+            "default": "需要隐藏的支付方式"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "chooseInvoiceTitle",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_chooseinvoicetitle/#chooseInvoiceTitle",
+        "explation": " 选择用户的发票抬头，需要用户授权 scope.invoiceTitle。",
+        "param": [
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "navigateToSmartProgram",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_smartprogram/#navigateToSmartProgram",
+        "explation": " 打开另一个小程序。",
+        "param": [
+          {
+            "param": "appKey",
+            "type": "String",
+            "isRequired": "是",
+            "default": "要打开的小程序App Key 。"
+          },
+          {
+            "param": "path",
+            "type": "String",
+            "isRequired": "否",
+            "default": "打开的页面路径，如果为空则打开首页 。"
+          },
+          {
+            "param": "extraData",
+            "type": "Object",
+            "isRequired": "否",
+            "default": "需要传递给目标小程序的数据，目标小程序可在 App.onLaunch()，App.onShow() 中获取到这份数据。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      },
+      {
+        "name": "navigateBackSmartProgram",
+        "href": "https://smartprogram.baidu.com/docs/develop/api/open_smartprogram/#navigateBackSmartProgram",
+        "explation": " 返回到上一个小程序。",
+        "param": [
+          {
+            "param": "extraData",
+            "type": "Object",
+            "isRequired": "否",
+            "default": "需要返回给上一个小程序的数据，上一个小程序可在 App.onLaunch()，App.onShow() 中获取到这份数据。"
+          },
+          {
+            "param": "success",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用成功的回调函数"
+          },
+          {
+            "param": "fail",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用失败的回调函数"
+          },
+          {
+            "param": "complete",
+            "type": "Function",
+            "isRequired": "否",
+            "default": "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        ]
+      }
+    ]
+  }
+]
