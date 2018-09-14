@@ -7,8 +7,7 @@ import superagent from 'superagent';
 import cheerio from 'cheerio';
 import {STRUCT} from './config';
 
-// const url = STRUCT.host;
-const sideBar = STRUCT.sideBar;
+const {sideBar} = STRUCT;
 const allApi = sideBar.allApi;
 
 export function getApisFromSideBar(url) {

@@ -14,10 +14,14 @@ import {STRUCT} from './config.js';
 import {getApisFromSideBar} from './getApisFromSideBar.js';
 const app = express();
 
-const host = STRUCT.host;
-const url = host + STRUCT.mainPage;
-const eachApi = STRUCT.eachApi;
-const paramTable = eachApi.args.paramTable;
+const {
+    host,
+    mainPage,
+    savePath,
+    eachApi
+} = STRUCT;
+const url = host + mainPage;
+const paramTable = eachApi.args.fnName;
 
 // 表格
 function columnSelectorOfTable(headerMap) {
@@ -75,12 +79,12 @@ function findAllParams($, obj) {
         if (cols) {
             let headerMap;
             switch (cols) {
-                case 3: headerMap = paramTable.headerMap.three;
+                case 3: headerMap = paramTable.headerMap.threeCols;
                     break;
-                case 4: headerMap = paramTable.headerMap.four;
+                case 4: headerMap = paramTable.headerMap.fourCols;
                     break;
                 case 5:
-                default: headerMap = paramTable.headerMap.five;
+                default: headerMap = paramTable.headerMap.fiveCols;
             }
             let columnSelector = columnSelectorOfTable(headerMap);
             trow.each((_, element) => {
@@ -131,7 +135,7 @@ app.get('/', (_, res) => {
     .then(apiData => {
         res.send(apiData);
         // 第三步：将数据写入文件
-        fs.writeFileSync(path.join(__dirname, STRUCT.savePath), JSON.stringify(apiData, null, 2));
+        fs.writeFileSync(path.join(__dirname, savePath), JSON.stringify(apiData, null, 2));
         console.log(105, '写入文件成功');
     }).catch(err => {
         throw err;

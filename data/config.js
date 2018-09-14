@@ -28,18 +28,20 @@ export const STRUCT = {
             filter: '：'
         },
         args: {
-            // 第一个为参数表格
-            paramTable: {
+            'fnName': {
+                // 第一个为参数表格
+                name: 'param',
                 type: 'table',
                 selector: 'tbody > tr',
                 headerMap: {
-                    three: ['name', 'type', 'desc'],
-                    four: ['name', 'type', 'required', 'desc'],
-                    five: ['name', 'type', 'required', 'default', 'desc']
+                    threeCols: ['name', 'type', 'desc'],
+                    fourCols: ['name', 'type', 'required', 'desc'],
+                    fiveCols: ['name', 'type', 'required', 'default', 'desc']
                 }
             },
             // 第二个为返回值表格
-            returnTable: {
+            'return': {
+                name: 'returnValue',
                 type: 'table',
                 headerMap: ['name', 'type', 'desc']
             }
